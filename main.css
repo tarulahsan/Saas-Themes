@@ -1,0 +1,521 @@
+/* main.css - Core styles and theme definitions */
+
+/* 0. Resets and Base Styles
+-------------------------------------------------- */
+body {
+    font-family: 'Roboto', sans-serif; /* Default font */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4; /* Default light background */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    flex-grow: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lexend', sans-serif; /* Headings font */
+    margin-bottom: 0.75rem;
+}
+
+a {
+    color: #007bff; /* Default link color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 1. Common Layout Rules (Leveraging Bootstrap's Grid/Flex)
+-------------------------------------------------- */
+/* Sections styling */
+.section {
+    padding: 60px 0;
+    overflow: hidden; /* Contains AOS animations */
+}
+
+.section-sm {
+    padding: 40px 0;
+}
+
+.section-lg {
+    padding: 80px 0;
+}
+
+/* Example of a custom container if needed, though Bootstrap .container is preferred */
+.custom-container {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 2. Utility Classes (Add more as needed)
+-------------------------------------------------- */
+.text-primary { color: #007bff !important; } /* Example, Bootstrap has these */
+.bg-light-gray { background-color: #f8f9fa; }
+.full-height { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+
+/* Lazy load background images */
+.lozad-background {
+    background-image: none; /* Initially no image */
+}
+
+/* 3. Design Theme Placeholders
+   These will be expanded significantly.
+-------------------------------------------------- */
+
+/* Default Theme (if no other theme is applied or as a base) */
+body {
+    /* Styles for default theme */
+}
+
+/* 3.1 Glassmorphism Theme */
+.theme-glassy body, body.theme-glassy {
+    background-color: #1d2935; /* Darker, slightly desaturated blue */
+    background-image: linear-gradient(160deg, #1d2935 0%, #2c3e50 100%); /* Subtle gradient */
+    color: #ecf0f1;
+    font-family: 'Inter', sans-serif; /* Using Inter for a modern feel in this theme */
+}
+
+.theme-glassy .navbar {
+    background: rgba(35, 45, 55, 0.6); /* Darker glass for navbar */
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    border-bottom: 1px solid rgba(236, 240, 241, 0.15);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.theme-glassy .navbar .nav-link, .theme-glassy .navbar .navbar-brand {
+    color: #ecf0f1;
+}
+.theme-glassy .navbar .nav-link:hover, .theme-glassy .navbar .navbar-brand:hover {
+    color: #ffffff;
+}
+.theme-glassy .navbar .navbar-toggler-icon {
+    filter: invert(1) brightness(2); /* Make toggler icon visible on dark bg */
+}
+
+
+.theme-glassy .hero-section { /* Specific styling for hero in glassy theme */
+    position: relative; /* For pseudo-elements or Three.js canvas */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+/* Optional: Add a pseudo-element for a static noise/texture if Three.js is too heavy for some */
+.theme-glassy .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* background-image: url('assets/ai-noise-texture.png'); */ /* Developer Note: Add a subtle noise texture if desired */
+    opacity: 0.05;
+    z-index: 0;
+    pointer-events: none;
+}
+.theme-glassy .hero-section .container {
+    position: relative; /* Ensure content is above pseudo-elements */
+    z-index: 1;
+}
+
+
+.theme-glassy .card {
+    background: rgba(44, 62, 80, 0.7); /* Glassy card background */
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    border: 1px solid rgba(236, 240, 241, 0.1);
+    border-radius: 12px; /* Slightly more rounded */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    color: #ecf0f1; /* Ensure text in cards is light */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.theme-glassy .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.theme-glassy .card h1, .theme-glassy .card h2, .theme-glassy .card h3, .theme-glassy .card h4, .theme-glassy .card h5, .theme-glassy .card p {
+    color: #ecf0f1;
+}
+.theme-glassy .card .text-primary { /* Ensure primary text stands out */
+    color: #5dade2 !important; /* Brighter blue for contrast */
+}
+
+.theme-glassy .btn-primary {
+    background-color: #5dade2;
+    border-color: #5dade2;
+    color: #141d26;
+    font-weight: bold;
+}
+.theme-glassy .btn-primary:hover {
+    background-color: #85c1e9;
+    border-color: #85c1e9;
+}
+.theme-glassy .btn-outline-light {
+    color: #ecf0f1;
+    border-color: #ecf0f1;
+}
+.theme-glassy .btn-outline-light:hover {
+    color: #1d2935;
+    background-color: #ecf0f1;
+}
+
+.theme-glassy .modal-content {
+    background: rgba(35, 45, 55, 0.9); /* Darker glass for modal */
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    border: 1px solid rgba(236, 240, 241, 0.15);
+    color: #ecf0f1;
+}
+.theme-glassy .modal-header, .theme-glassy .modal-footer {
+    border-bottom-color: rgba(236, 240, 241, 0.15);
+    border-top-color: rgba(236, 240, 241, 0.15);
+}
+.theme-glassy .form-control {
+    background-color: rgba(255,255,255,0.1);
+    border-color: rgba(236, 240, 241, 0.2);
+    color: #ecf0f1;
+}
+.theme-glassy .form-control:focus {
+    background-color: rgba(255,255,255,0.15);
+    border-color: #5dade2;
+    color: #ecf0f1;
+    box-shadow: none;
+}
+.theme-glassy .form-check-input:checked {
+    background-color: #5dade2;
+    border-color: #5dade2;
+}
+.theme-glassy .nav-tabs .nav-link {
+    color: #bdc3c7;
+    border-color: transparent;
+}
+.theme-glassy .nav-tabs .nav-link.active, .theme-glassy .nav-tabs .nav-link:hover {
+    color: #ffffff;
+    background-color: rgba(255,255,255,0.1);
+    border-bottom-color: #5dade2;
+}
+.theme-glassy hr {
+    border-color: rgba(236, 240, 241, 0.15) !important;
+}
+
+/* Ensure other theme placeholders remain untouched */
+/* 3.2 Matte Flat Modern Theme */
+
+.theme-matte body, body.theme-matte {
+    background-color: #2d3436; /* Dark grey-blue */
+    color: #dfe6e9;
+    font-family: 'Inter', sans-serif;
+}
+.theme-matte .navbar {
+    background-color: #252a2c;
+    border-bottom: 1px solid #4a5355;
+}
+.theme-matte .navbar .nav-link, .theme-matte .navbar .navbar-brand { color: #dfe6e9; }
+.theme-matte .navbar .nav-link:hover { color: #ffffff; }
+.theme-matte .navbar .navbar-toggler-icon { filter: invert(1); }
+
+.theme-matte .card {
+    background-color: #3b4446;
+    border: 1px solid #4a5355;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    color: #dfe6e9;
+}
+.theme-matte .card h1, .theme-matte .card h2, .theme-matte .card h3, .theme-matte .card h4 { color: #ffffff; }
+.theme-matte .btn-primary {
+    background-color: #0984e3; /* Bright blue */
+    border-color: #0984e3;
+    color: #ffffff;
+}
+.theme-matte .btn-primary:hover { background-color: #2e9fff; border-color: #2e9fff; }
+.theme-matte .text-primary { color: #0984e3 !important; }
+.theme-matte .form-control { background-color: #4a5355; border-color: #5f6b6e; color: #dfe6e9; }
+.theme-matte .form-control:focus { background-color: #5f6b6e; border-color: #0984e3; color: #dfe6e9; }
+.theme-matte .modal-content { background-color: #2d3436; border-color: #4a5355; color: #dfe6e9; }
+.theme-matte hr { border-color: #4a5355 !important; }
+/* TODO: Add light mode toggle if time permits */
+
+.theme-matte body, body.theme-matte {
+    background-color: #333333; /* Dark mode default */
+    color: #f5f5f5;
+    /* Add light mode toggle styles later */
+}
+.theme-matte .card {
+    background-color: #444444;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.theme-matte .btn-primary {
+    background-color: #5E81AC; /* Example color */
+    border-color: #5E81AC;
+}
+/* Add more specific matte styles here */
+
+/* 3.3 Vibrant & Neon Theme */
+
+.theme-vibrant body, body.theme-vibrant {
+    background-color: #141E30; /* Deep blue */
+    background-image: linear-gradient(to right, #141E30, #243B55);
+    color: #f0f0f0;
+    font-family: 'Lexend', sans-serif;
+}
+.theme-vibrant .navbar {
+    background: rgba(20, 30, 48, 0.8);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.theme-vibrant .navbar .nav-link, .theme-vibrant .navbar .navbar-brand { color: #f0f0f0; }
+.theme-vibrant .navbar .nav-link:hover { color: #ff416c; } /* Neon pink hover */
+.theme-vibrant .navbar .navbar-toggler-icon { filter: invert(1); }
+
+.theme-vibrant .card {
+    background-color: rgba(36, 59, 85, 0.7);
+    border: 1px solid #ff416c; /* Neon pink border */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 65, 108, 0.3);
+    color: #f0f0f0;
+}
+.theme-vibrant .card h1, .theme-vibrant .card h2, .theme-vibrant .card h3, .theme-vibrant .card h4 { color: #ffffff; text-shadow: 0 0 5px rgba(255, 65, 108, 0.5); }
+.theme-vibrant .btn-primary, .theme-vibrant .cta-button {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c); /* Orange to Pink Gradient */
+    color: white;
+    border: none;
+    box-shadow: 0 0 10px #ff416c;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 12px 25px;
+    border-radius: 50px; /* Pill shape */
+}
+.theme-vibrant .btn-primary:hover { box-shadow: 0 0 20px #ff416c; transform: scale(1.05); }
+.theme-vibrant .text-primary { color: #ff416c !important; }
+.theme-vibrant .form-control { background-color: rgba(255,255,255,0.1); border-color: #ff416c; color: #f0f0f0; }
+.theme-vibrant .form-control:focus { border-color: #ff4b2b; box-shadow: 0 0 5px #ff4b2b; }
+.theme-vibrant .modal-content { background-color: #141E30; border: 1px solid #ff416c; }
+.theme-vibrant hr { border-color: #ff416c !important; opacity: 0.5; }
+
+.theme-vibrant body, body.theme-vibrant {
+    background-color: #1a1a2e; /* Dark base for neon */
+    color: #e0e0e0;
+}
+.theme-vibrant .btn-primary, .theme-vibrant .cta-button {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 0 15px #e6683c;
+}
+.theme-vibrant h1, .theme-vibrant h2 {
+    color: #82eefd; /* Neon text example */
+}
+/* Add more specific vibrant/neon styles here */
+
+/* 3.4 Minimal & Elegant Theme */
+
+.theme-elegant body, body.theme-elegant {
+    background-color: #f8f9fa; /* Off-white */
+    color: #212529; /* Dark grey */
+    font-family: 'Inter', serif; /* Serif for elegance */
+}
+.theme-elegant .navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.theme-elegant .navbar .nav-link, .theme-elegant .navbar .navbar-brand { color: #212529; }
+.theme-elegant .navbar .nav-link:hover { color: #0056b3; } /* Subtle blue hover */
+
+.theme-elegant .card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.07); /* Softer, larger shadow */
+    border-radius: 6px;
+    color: #212529;
+}
+.theme-elegant .card h1, .theme-elegant .card h2, .theme-elegant .card h3, .theme-elegant .card h4 { color: #343a40; font-family: 'Lexend', sans-serif; }
+.theme-elegant .btn-primary {
+    background-color: #343a40; /* Dark Charcoal */
+    border-color: #343a40;
+    color: #ffffff;
+    font-weight: 500; /* Medium weight */
+    letter-spacing: 0.3px;
+    border-radius: 4px;
+    padding: 10px 20px;
+}
+.theme-elegant .btn-primary:hover { background-color: #212529; border-color: #212529; }
+.theme-elegant .text-primary { color: #0056b3 !important; } /* Standard blue for accents */
+.theme-elegant .form-control { background-color: #ffffff; border-color: #ced4da; color: #495057; }
+.theme-elegant .form-control:focus { border-color: #0056b3; box-shadow: 0 0 0 0.2rem rgba(0,86,179,.25); }
+.theme-elegant .modal-content { background-color: #f8f9fa; border: none; box-shadow: 0 5px 25px rgba(0,0,0,0.1); }
+.theme-elegant hr { border-color: #dee2e6 !important; }
+
+.theme-elegant body, body.theme-elegant {
+    background-color: #ffffff;
+    color: #333333;
+    font-family: 'Inter', sans-serif;
+}
+.theme-elegant .card {
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.theme-elegant .btn-primary {
+    background-color: #252525;
+    border-color: #252525;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+/* Add more specific elegant styles here */
+
+/* 3.5 Sci-fi/Hacker Theme */
+.theme-scifi body, body.theme-scifi {
+    background-color: #000000;
+    color: #00ff00; /* Classic green terminal text */
+    font-family: 'Space Grotesk', monospace;
+}
+.theme-scifi .card, .theme-scifi .navbar {
+    border: 1px solid #00ff00;
+    background-color: rgba(0, 20, 0, 0.8);
+}
+.theme-scifi .btn-primary {
+    color: #000000;
+    background-color: #00ff00;
+    border-color: #00ff00;
+}
+/* Add more specific scifi styles here */
+
+/* 3.6 Friendly/Playful Theme */
+
+.theme-friendly body, body.theme-friendly {
+    background-color: #eef7f2; /* Very light green/blue */
+    color: #333;
+    font-family: 'Lexend', sans-serif; /* Rounded, friendly font */
+}
+.theme-friendly .navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #d1e0d5;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.theme-friendly .navbar .nav-link, .theme-friendly .navbar .navbar-brand { color: #2c6e49; /* Friendly green */ }
+.theme-friendly .navbar .nav-link:hover { color: #4c956c; }
+
+.theme-friendly .card {
+    background-color: #ffffff;
+    border: 1px solid #d1e0d5;
+    border-radius: 16px; /* More rounded */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    color: #333;
+}
+.theme-friendly .card h1, .theme-friendly .card h2, .theme-friendly .card h3, .theme-friendly .card h4 { color: #2c6e49; }
+.theme-friendly .btn-primary {
+    background-color: #4c956c; /* Friendly green */
+    border-color: #4c956c;
+    color: #ffffff;
+    border-radius: 50px; /* Pill shape */
+    padding: 10px 25px;
+    font-weight: bold;
+}
+.theme-friendly .btn-primary:hover { background-color: #2c6e49; border-color: #2c6e49; }
+.theme-friendly .text-primary { color: #4c956c !important; }
+.theme-friendly .form-control { background-color: #ffffff; border-color: #b8d1be; border-radius: 8px; }
+.theme-friendly .form-control:focus { border-color: #4c956c; box-shadow: 0 0 0 0.2rem rgba(76,149,108,.25); }
+.theme-friendly .modal-content { background-color: #eef7f2; border-radius: 16px; }
+.theme-friendly .chat-bubble { /* Example for chat bot */
+    background-color: #4c956c;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px 20px 20px 5px; /* Bubble shape */
+    display: inline-block;
+    max-width: 80%;
+}
+.theme-friendly hr { border-color: #d1e0d5 !important; }
+
+.theme-friendly body, body.theme-friendly {
+    background-color: #e0f7fa; /* Light, friendly blue */
+    color: #263238;
+    font-family: 'Lexend', sans-serif; /* Rounded font */
+}
+.theme-friendly .card {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.theme-friendly .btn-primary {
+    background-color: #ff7043; /* Bright, friendly orange */
+    border-color: #ff7043;
+    border-radius: 25px;
+    padding: 10px 25px;
+}
+/* Add more specific friendly styles here */
+
+/* 3.7 Retro / Cyber UI Theme */
+.theme-retro body, body.theme-retro {
+    background-color: #1d0f32; /* Deep purple */
+    color: #ff00ff; /* Magenta text */
+    font-family: 'Space Grotesk', sans-serif;
+}
+.theme-retro h1, .theme-retro h2, .theme-retro h3 {
+    /* text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff; */ /* Chrome text effect - can be performance heavy */
+    color: #00f0f0; /* Cyan highlight */
+}
+.theme-retro .btn-primary {
+    background-color: #00f0f0;
+    color: #1d0f32;
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 10px #00f0f0;
+}
+/* Add more specific retro styles here */
+
+
+/* 4. Component Styles (e.g., buttons, cards, navbar - some will be Bootstrap overrides)
+-------------------------------------------------- */
+/* Example: Custom Button Style (if not using only Bootstrap) */
+.btn-custom {
+    padding: 10px 20px;
+    border-radius: 5px;
+    /* Add more styles */
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #343a40; /* Dark footer */
+    color: white;
+    padding: 40px 0;
+    font-size: 0.9em;
+}
+.footer a {
+    color: #adb5bd;
+}
+.footer a:hover {
+    color: #ffffff;
+}
+.footer .social-icons a {
+    margin-right: 15px;
+    font-size: 1.5em;
+}
+
+/* Navbar basic styling (Bootstrap will handle most) */
+.navbar {
+    /* Customizations if needed */
+}
+
+
+/* Responsive Adjustments (Bootstrap handles a lot, add specific overrides if necessary)
+-------------------------------------------------- */
+@media (max-width: 768px) {
+    .section {
+        padding: 40px 0;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+}

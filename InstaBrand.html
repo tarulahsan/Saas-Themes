@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta Tags - Update per page -->
+<title>Page Title Here - AI SaaS Product</title>
+<meta name="description" content="Description of this specific AI SaaS product and landing page.">
+<link rel="canonical" href="https://example.com/your-page-url">
+
+<!-- OpenGraph Meta Tags - Update per page -->
+<meta property="og:title" content="Page Title Here - AI SaaS Product">
+<meta property="og:description" content="Description of this specific AI SaaS product and landing page.">
+<meta property="og:image" content="assets/ai-og-preview-default.jpg"> <!-- Update with specific page OG image -->
+<meta property="og:url" content="https://example.com/your-page-url">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card Meta Tags - Update per page -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Page Title Here - AI SaaS Product">
+<meta name="twitter:description" content="Description of this specific AI SaaS product and landing page.">
+<meta name="twitter:image" content="assets/ai-og-preview-default.jpg"> <!-- Update with specific page Twitter image -->
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@400;700&family=Lexend:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Preload Google Fonts (example for Roboto, add others as needed for specific template emphasis) -->
+<!-- Note: Preloading too many fonts can be counterproductive. Preload only critical above-the-fold fonts. -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"></noscript>
+
+<!-- CSS Frameworks and Libraries -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.css">
+<link rel="stylesheet" href="main.css"> <!-- Local theme and custom styles -->
+
+<!-- JS Libraries - Defer/Async where possible -->
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+<!-- Bootstrap Bundle JS (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+<!-- Three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+<!-- Lozad.js (Lazy Loading) -->
+<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js" defer></script>
+<!-- Parsley.js (Validation) -->
+<script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js" defer></script>
+<!-- AOS (Animate on Scroll) -->
+<script src="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.js" defer></script>
+<!-- GSAP (Animations) - Core only, add plugins if needed -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+<!-- Local custom scripts -->
+<script src="main.js" defer></script>
+
+<!-- Schema.org Markup Placeholder - Update per page -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Page Title Here - AI SaaS Product",
+  "description": "Description of this specific AI SaaS product and landing page.",
+  "url": "https://example.com/your-page-url",
+  "image": "assets/ai-og-preview-default.jpg"
+  // Add more specific schema based on product type, e.g., SoftwareApplication
+}
+</script>
+
+<!-- Google Tag Manager/GA4 Snippet Placeholder -->
+<!-- Google Tag Manager -->
+<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
+<!-- End Google Tag Manager -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script> -->
+    <!-- Page-Specific Meta Content for InstaBrand -->
+<script>
+
+        document.title = "InstaBrand - Post. Caption. Hashtag. Done. | AI Powered";
+        document.querySelector('meta[name="description"]').setAttribute("content", "InstaBrand is your AI social media assistant. It generates engaging posts, captions, and relevant hashtags to grow your online presence.");
+        document.querySelector('link[rel="canonical"]').setAttribute("href", "https://example.com/instabrand");
+        document.querySelector('meta[property="og:title"]').setAttribute("content", "InstaBrand - Post. Caption. Hashtag. Done.");
+        document.querySelector('meta[property="og:description"]').setAttribute("content", "InstaBrand is your AI social media assistant. It generates engaging posts, captions, and relevant hashtags to grow your online presence.");
+        document.querySelector('meta[property="og:image"]').setAttribute("content", "assets/ai-og-instabrand-default.jpg");
+        document.querySelector('meta[property="og:url"]').setAttribute("content", "https://example.com/instabrand");
+        document.querySelector('meta[name="twitter:title"]').setAttribute("content", "InstaBrand - Post. Caption. Hashtag. Done.");
+        document.querySelector('meta[name="twitter:description"]').setAttribute("content", "InstaBrand is your AI social media assistant. It generates engaging posts, captions, and relevant hashtags to grow your online presence.");
+        document.querySelector('meta[name="twitter:image"]').setAttribute("content", "assets/ai-og-instabrand-default.jpg");
+        const schema = {
+          "@context": "https://schema.org", "@type": "Service",
+          "name": "InstaBrand", "description": "InstaBrand is your AI social media assistant. It generates engaging posts, captions, and relevant hashtags to grow your online presence.",
+          "url": "https://example.com/instabrand",
+          "potentialAction": { "@type": "InteractAction", "target": "https://example.com/instabrand#start" }
+        };
+        var oldSchemaScript = document.querySelector('script[type="application/ld+json"]');
+        if (oldSchemaScript) oldSchemaScript.remove();
+        const schemaScript = document.createElement('script');
+        schemaScript.type = 'application/ld+json';
+        schemaScript.text = JSON.stringify(schema, null, 2);
+        document.head.appendChild(schemaScript);
+
+</script>
+</head>
+<body class="theme-vibrant"> <!-- Applying Glassmorphism theme -->
+
+    <!-- Google Tag Manager (noscript) Placeholder -->
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header/Navigation -->
+    <header class="navbar navbar-expand-lg fixed-top" data-aos="fade-down">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <!-- Suggested Image: A sleek, futuristic logo for InstaBrand, perhaps incorporating an eye or neural network motif. Replace assets/ai-logo-generic.png -->
+                <img src="assets/ai-logo-generic.png" alt="InstaBrand Logo" style="height: 40px;" class="lozad"> InstaBrand
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#use-cases">Use Cases</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#hero">Try Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section hero-section full-height d-flex align-items-center text-center text-white" style="position: relative; overflow: hidden;">
+        <!-- Placeholder for Three.js Background -->
+        <!-- Suggested Element: A subtle, animated Three.js background depicting abstract neural activity or flowing light particles to enhance the 'glassy' theme. -->
+        <div id="threejs-hero-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: rgba(0,0,50,0.3);">
+            <!-- Developer Note: Initialize Three.js scene here in a <script> tag or via main.js -->
+        </div>
+        <div class="container" data-aos="fade-up">
+            <h1 class="display-3">Post. Caption. Hashtag. Done.</h1>
+            <p class="lead my-4">InstaBrand is your AI social media assistant. It generates engaging posts, captions, and relevant hashtags to grow your online presence.</p>
+            <a href="#contact" class="btn btn-primary btn-lg">Post. Caption. Hashtag. Done.</a>
+            <a href="#features" class="btn btn-outline-light btn-lg ms-2">Learn More</a>
+        </div>
+    </section>
+
+    <!-- AI Feature Showcase -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Unlock the Potential of InstaBrand</h2>
+                <p class="lead">Discover the key features that make InstaBrand exceptional.</p>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 p-4">
+                        <!-- Suggested Icon: Font Awesome icon like fa-brain, fa-lightbulb, or fa-image. Or custom AI-generated icon. -->
+                        <i class="fas fa-brain fa-3x text-primary mb-3"></i>
+                        <h4>AI Content Creation</h4>
+                        <p>Generates post ideas, writes compelling captions, and suggests relevant hashtags for your brand.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 p-4">
+                        <!-- Suggested Icon: fa-palette, fa-magic, or fa-cogs -->
+                        <i class="fas fa-magic fa-3x text-primary mb-3"></i>
+                        <h4>Visual Suggestions</h4>
+                        <p>Recommends image or video styles that align with your brand and target audience.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 p-4">
+                        <!-- Suggested Icon: fa-bolt, fa-rocket, or fa-cloud-upload-alt -->
+                        <i class="fas fa-bolt fa-3x text-primary mb-3"></i>
+                        <h4>Scheduling Fast & Scalable Analytics</h4>
+                        <p>Schedule your posts and track their performance with AI-driven insights.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases / Benefits -->
+    <section id="use-cases" class="section bg-light-gray">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Who Can Benefit from InstaBrand?</h2>
+                <p class="lead">From individuals to enterprises, InstaBrand offers valuable solutions.</p>
+            </div>
+            <div class="row" data-aos="fade-up">
+                <div class="col-md-6 col-lg-4 mb-3">
+                    <h5><i class="fas fa-paint-brush me-2 text-primary"></i>Artists & Designers</h5>
+                    <p>Create unique art pieces, concept designs, and inspiration for projects.</p>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-3">
+                    <h5><i class="fas fa-bullhorn me-2 text-primary"></i>Marketers & Advertisers</h5>
+                    <p>Generate custom visuals for campaigns, social media, and ad creatives.</p>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-3">
+                    <h5><i class="fas fa-feather-alt me-2 text-primary"></i>Content Creators</h5>
+                    <p>Produce unique blog post headers, YouTube thumbnails, and presentation graphics.</p>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-3">
+                    <h5><i class="fas fa-gamepad me-2 text-primary"></i>Game Developers</h5>
+                    <p>Quickly prototype game assets, character designs, and environment concepts.</p>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-3">
+                    <h5><i class="fas fa-lightbulb me-2 text-primary"></i>Startups & Innovators</h5>
+                    <p>Visualize product ideas and create compelling pitch deck visuals.</p>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-3">
+                    <h5><i class="fas fa-camera-retro me-2 text-primary"></i>Photographers</h5>
+                    <p>Explore creative photo manipulations and artistic styles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Demo or Screenshot Animation -->
+    <section id="demo" class="section">
+        <div class="container text-center">
+            <div class="mb-5" data-aos="fade-up">
+                <h2>See InstaBrand in Action</h2>
+                <p class="lead">Explore the powerful features of InstaBrand.</p>
+            </div>
+            <!-- Suggested Image: An animated GIF or a short video loop showcasing the InstaBrand interface generating an image from a text prompt. Replace assets/ai-product-showcase-1.png -->
+            <img data-src="assets/ai-product-showcase-1.png" alt="InstaBrand Demo" class="img-fluid rounded shadow-lg lozad" data-aos="zoom-in-up">
+            <p class="mt-3 fst-italic">Comment: Placeholder for InstaBrand demo. Replace with relevant screenshot, GIF or animation.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section id="pricing" class="section bg-light-gray">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Choose the Perfect Plan for Your Needs</h2>
+                <p class="lead">Choose the plan that's right for you.</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 text-center">
+                        <div class="card-header"><h4>Free Trial</h4></div>
+                        <div class="card-body">
+                            <h5 class="card-title display-4">$0<small class="text-muted">/mo</small></h5>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>10 Image Generations</li>
+                                <li>Basic Quality</li>
+                                <li>Community Support</li>
+                                <li>Watermarked Images</li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-primary">Start Free Trial</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 text-center border-primary">
+                        <div class="card-header bg-primary text-white"><h4>Creator</h4></div>
+                        <div class="card-body">
+                            <h5 class="card-title display-4">$19<small class="text-muted">/mo</small></h5>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>200 Image Generations</li>
+                                <li>High Quality</li>
+                                <li>Priority Support</li>
+                                <li>No Watermarks</li>
+                                <li>Access to Advanced Models</li>
+                            </ul>
+                            <button type="button" class="btn btn-primary">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 text-center">
+                        <div class="card-header"><h4>Pro / API</h4></div>
+                        <div class="card-body">
+                            <h5 class="card-title display-4">$49<small class="text-muted">/mo</small></h5>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>1000 Image Generations</li>
+                                <li>Premium Quality & Styles</li>
+                                <li>Dedicated Support</li>
+                                <li>API Access</li>
+                                <li>Commercial Use License</li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-primary">Contact Sales</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Docs or Integration Info (Tabbed) -->
+    <section id="api-info" class="section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Powerful API for Easy Integration</h2>
+                <p class="lead">Powerful API for developers.</p>
+            </div>
+            <ul class="nav nav-tabs justify-content-center mb-4" id="apiTabs" role="tablist" data-aos="fade-up">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab" aria-controls="overview" aria-selected="true">Overview</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="authentication-tab" data-bs-toggle="tab" data-bs-target="#authentication" type="button" role="tab" aria-controls="authentication" aria-selected="false">Authentication</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="endpoints-tab" data-bs-toggle="tab" data-bs-target="#endpoints" type="button" role="tab" aria-controls="endpoints" aria-selected="false">Endpoints</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="apiTabsContent" data-aos="fade-up" data-aos-delay="100">
+                <div class="tab-pane fade show active p-3" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                    <h4>API Overview</h4>
+                    <p>Our REST API allows you to integrate InstaBrand's image generation capabilities directly into your applications, websites, or workflows. Get programmatic access to generate images, manage your account, and more. All responses are in JSON format.</p>
+                    <pre class="bg-light p-3 rounded"><code>// Example API Request (conceptual)
+POST /v1/generate
+Authorization: Bearer YOUR_API_KEY
+{
+  "prompt": "A futuristic cityscape at sunset, cyberpunk style",
+  "style": "photorealistic",
+  "aspect_ratio": "16:9"
+}</code></pre>
+                </div>
+                <div class="tab-pane fade p-3" id="authentication" role="tabpanel" aria-labelledby="authentication-tab">
+                    <h4>Authentication</h4>
+                    <p>Authenticate your API requests by including your API key in the Authorization header. Obtain your API key from your InstaBrand dashboard.</p>
+                    <pre class="bg-light p-3 rounded"><code>Authorization: Bearer YOUR_API_KEY</code></pre>
+                </div>
+                <div class="tab-pane fade p-3" id="endpoints" role="tabpanel" aria-labelledby="endpoints-tab">
+                    <h4>Key Endpoints</h4>
+                    <ul>
+                        <li><strong>POST /v1/generate:</strong> Generate a new image based on a prompt and parameters.</li>
+                        <li><strong>GET /v1/images/{id}:</strong> Retrieve status or details of a generated image.</li>
+                        <li><strong>GET /v1/account/usage:</strong> Check your current API usage and limits.</li>
+                    </ul>
+                    <p><em>Full API documentation will be available upon signing up for an API plan.</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section bg-light-gray">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Loved by Creators Worldwide</h2>
+            </div>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-card text-center p-4">
+                            <!-- Suggested Image: An AI-generated, diverse, and professional-looking avatar. Replace assets/ai-avatar-neutral.png -->
+                            <img data-src="assets/ai-avatar-neutral.png" class="rounded-circle mb-3 lozad" alt="User Avatar 1" style="width: 80px; height: 80px; object-fit: cover;">
+                            <p class="lead">"InstaBrand has revolutionized my workflow. I can now generate stunning visuals for my blog in minutes!"</p>
+                            <h5 class="mt-3">- Alex P., Content Creator</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-card text-center p-4">
+                            <!-- Suggested Image: Another unique AI-generated avatar. Replace assets/ai-avatar-neutral.png -->
+                            <img data-src="assets/ai-avatar-neutral.png" class="rounded-circle mb-3 lozad" alt="User Avatar 2" style="width: 80px; height: 80px; object-fit: cover;">
+                            <p class="lead">"The quality of images is outstanding. It's like having a professional artist on demand."</p>
+                            <h5 class="mt-3">- Sarah K., Marketing Manager</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-card text-center p-4">
+                            <!-- Suggested Image: A third unique AI-generated avatar. Replace assets/ai-avatar-neutral.png -->
+                            <img data-src="assets/ai-avatar-neutral.png" class="rounded-circle mb-3 lozad" alt="User Avatar 3" style="width: 80px; height: 80px; object-fit: cover;">
+                            <p class="lead">"The API is robust and easy to integrate. We've built amazing features on top of InstaBrand."</p>
+                            <h5 class="mt-3">- David L., Lead Developer</h5>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="final-cta" class="section text-center text-white" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/ai-hero-background-abstract.jpg') center center/cover no-repeat;">
+        <!-- Suggested Image for background: A different, perhaps more focused AI-generated abstract image than the hero. Replace assets/ai-hero-background-abstract.jpg -->
+        <div class="container" data-aos="fade-up">
+            <h2>Ready to Elevate Your Work with InstaBrand?</h2>
+            <p class="lead my-4">Sign up now and experience the future of Service.</p>
+            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">Post. Caption. Hashtag. Done.</button>
+        </div>
+    </section>
+
+    <!-- Contact Form (Modal) -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Start Your AI Image Journey</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Fill out the form below to get started or inquire about our services.</p>
+                    <form id="leadCaptureForm" data-parsley-validate>
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="contactName" name="name" required data-parsley-minlength="3">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="contactEmail" name="email" required data-parsley-type="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactProject" class="form-label">Tell us about your project (Optional)</label>
+                            <textarea class="form-control" id="contactProject" name="project" rows="3" data-parsley-maxlength="500"></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="contactConsent" name="consent" required data-parsley-required-message="You must agree to the terms.">
+                            <label class="form-check-label" for="contactConsent">I agree to the <a href="#privacy" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a> and <a href="#terms" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#termsModal">Terms of Service</a>.</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit & Start Generating</button>
+                    </form>
+                    <div id="form-submission-feedback" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal (Placeholder) -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><em>Placeholder for Privacy Policy content. Please replace this with your actual privacy policy.</em></p>
+                    <p>Last updated: [Date]</p>
+                    <p>InstaBrand ("us", "we", or "our") operates the https://example.com/neurovision website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal (Placeholder) -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsModalLabel">Terms of Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><em>Placeholder for Terms of Service content. Please replace this with your actual terms.</em></p>
+                    <p>Please read these Terms of Service ("Terms", "Terms of Service") carefully before using the https://example.com/neurovision website (the "Service") operated by InstaBrand ("us", "we", or "our"). Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>InstaBrand AI</h5>
+                    <!-- Suggested Image: Same as header logo, possibly smaller or monochrome. Replace assets/ai-logo-generic.png -->
+                    <img data-src="assets/ai-logo-generic.png" alt="InstaBrand Footer Logo" style="height: 30px; filter: brightness(0) invert(1);" class="lozad mb-2">
+                    <p>Generating the future of visuals, one prompt at a time.</p>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#api-info">API Docs</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h5>Connect</h5>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <div class="text-center">
+                <p>&copy; 2023 InstaBrand. All rights reserved. AI for a Creative World.</p>
+                <p class="small">Disclaimer: InstaBrand is a fictional product for template demonstration purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Placeholder for Three.js hero background script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Placeholder: Initialize Three.js for hero background if applicable
+        const heroBg = document.getElementById('threejs-hero-background');
+        if (heroBg && typeof THREE !== 'undefined') {
+            // console.log('Attempting to initialize Three.js for hero background.');
+            // Example:
+            // const scene = new THREE.Scene();
+            // const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            // const renderer = new THREE.WebGLRenderer({ alpha: true }); // alpha true for transparent bg
+            // renderer.setSize(window.innerWidth, window.innerHeight);
+            // heroBg.appendChild(renderer.domElement);
+            // camera.position.z = 5;
+            // function animate() {
+            //     requestAnimationFrame(animate);
+            //     // Add animation logic here
+            //     renderer.render(scene, camera);
+            // }
+            // animate();
+            // window.addEventListener('resize', () => {
+            //    renderer.setSize(window.innerWidth, window.innerHeight);
+            //    camera.aspect = window.innerWidth / window.innerHeight;
+            //    camera.updateProjectionMatrix();
+            // });
+            heroBg.innerHTML = '<p style="color: white; text-align: center; padding-top: 20%;">Three.js Background Placeholder - Implement Animation Here</p>';
+        }
+
+        // Parsley form validation init
+        $('#leadCaptureForm').parsley().on('form:submit', function() {
+            // This event is triggered when the form is valid and submitted
+            $('#form-submission-feedback').html('<div class="alert alert-success">Thank you! Your message has been sent. We will get back to you shortly.</div>');
+            // In a real application, you would submit the form data via AJAX here
+            // e.g., $.ajax({ url: 'your-endpoint', method: 'POST', data: $(this).serialize(), ... });
+            return false; // Prevent actual form submission for this demo
+        }).on('form:error', function() {
+            $('#form-submission-feedback').html('<div class="alert alert-danger">Please correct the errors in the form.</div>');
+        });
+    });
+    </script>
+
+</body>
+</html>
