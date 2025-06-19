@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta Tags - Update per page -->
+<title>Page Title Here - AI SaaS Product</title>
+<meta name="description" content="Description of this specific AI SaaS product and landing page.">
+<link rel="canonical" href="https://example.com/your-page-url">
+
+<!-- OpenGraph Meta Tags - Update per page -->
+<meta property="og:title" content="Page Title Here - AI SaaS Product">
+<meta property="og:description" content="Description of this specific AI SaaS product and landing page.">
+<meta property="og:image" content="assets/ai-og-preview-default.jpg"> <!-- Update with specific page OG image -->
+<meta property="og:url" content="https://example.com/your-page-url">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card Meta Tags - Update per page -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Page Title Here - AI SaaS Product">
+<meta name="twitter:description" content="Description of this specific AI SaaS product and landing page.">
+<meta name="twitter:image" content="assets/ai-og-preview-default.jpg"> <!-- Update with specific page Twitter image -->
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@400;700&family=Lexend:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Preload Google Fonts (example for Roboto, add others as needed for specific template emphasis) -->
+<!-- Note: Preloading too many fonts can be counterproductive. Preload only critical above-the-fold fonts. -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"></noscript>
+
+<!-- CSS Frameworks and Libraries -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.css">
+<link rel="stylesheet" href="main.css"> <!-- Local theme and custom styles -->
+
+<!-- JS Libraries - Defer/Async where possible -->
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+<!-- Bootstrap Bundle JS (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+<!-- Three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+<!-- Lozad.js (Lazy Loading) -->
+<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js" defer></script>
+<!-- Parsley.js (Validation) -->
+<script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js" defer></script>
+<!-- AOS (Animate on Scroll) -->
+<script src="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.js" defer></script>
+<!-- GSAP (Animations) - Core only, add plugins if needed -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+<!-- Local custom scripts -->
+<script src="main.js" defer></script>
+
+<!-- Schema.org Markup Placeholder - Update per page -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Page Title Here - AI SaaS Product",
+  "description": "Description of this specific AI SaaS product and landing page.",
+  "url": "https://example.com/your-page-url",
+  "image": "assets/ai-og-preview-default.jpg"
+  // Add more specific schema based on product type, e.g., SoftwareApplication
+}
+</script>
+
+<!-- Google Tag Manager/GA4 Snippet Placeholder -->
+<!-- Google Tag Manager -->
+<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
+<!-- End Google Tag Manager -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script> -->
+
+    <!-- Template-Specific Metadata - To be dynamically updated by JS in each final template -->
+    <!-- This script block will be copied into each new template and customized -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Default values, will be overridden by specific template generation
+            const pageTitle = "AI SaaS Product - Unique Landing Page";
+            const pageDescription = "This is a unique landing page for an innovative AI SaaS product.";
+            const pageSlug = "template-product"; // E.g., neurovision, talkbot
+            const ogImage = "assets/ai-og-preview-default.jpg"; // Default, ideally assets/ai-og-PAGESLUG-default.jpg
+            const schemaType = "SoftwareApplication"; // Or Service, WebPage, etc.
+
+            document.title = pageTitle;
+            document.querySelector('meta[name="description"]').setAttribute("content", pageDescription);
+            document.querySelector('link[rel="canonical"]').setAttribute("href", `https://example.com/\${pageSlug}`);
+
+            document.querySelector('meta[property="og:title"]').setAttribute("content", pageTitle);
+            document.querySelector('meta[property="og:description"]').setAttribute("content", pageDescription);
+            document.querySelector('meta[property="og:image"]').setAttribute("content", ogImage);
+            document.querySelector('meta[property="og:url"]').setAttribute("content", `https://example.com/\${pageSlug}`);
+
+            document.querySelector('meta[name="twitter:title"]').setAttribute("content", pageTitle);
+            document.querySelector('meta[name="twitter:description"]').setAttribute("content", pageDescription);
+            document.querySelector('meta[name="twitter:image"]').setAttribute("content", ogImage);
+
+            const schema = {
+              "@context": "https://schema.org",
+              "@type": schemaType,
+              "name": pageTitle,
+              "description": pageDescription,
+              "url": `https://example.com/\${pageSlug}`,
+              "image": ogImage
+              // Add more specific schema properties based on product type
+            };
+
+            // Remove existing schema script if any from common_head.html (if one was there)
+            // or ensure this one replaces/is the primary one.
+            let oldSchemaScript = document.querySelector('script[type="application/ld+json"]');
+            if (oldSchemaScript && oldSchemaScript.parentElement === document.head) { // Make sure it's the one in head
+                 oldSchemaScript.remove();
+            }
+            const schemaScriptTag = document.createElement('script');
+            schemaScriptTag.type = 'application/ld+json';
+            schemaScriptTag.text = JSON.stringify(schema, null, 2); // Pretty print JSON
+            document.head.appendChild(schemaScriptTag);
+        });
+    </script>
+
+    <!-- Template-Specific CSS - Add unique styles for this template here -->
+    <style>
+        /* Base body styling will come from main.css via theme class */
+        /* Example: body { background-color: var(--background-color); color: var(--text-color); } */
+
+        /* Add highly unique structural or component CSS for THIS template below */
+        /* E.g., .unique-hero-layout { ... } */
+        /* E.g., .custom-card-design-for-template-X { ... } */
+    </style>
+</head>
+<body class="theme-default"> <!-- Placeholder theme, change for each template -->
+
+    <!-- Google Tag Manager (noscript) Placeholder - from common_head.html if not already there -->
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+
+    <!-- Header: To be custom designed for each template -->
+    <header id="pageHeader" class="site-header">
+        <!-- Example: Basic Bootstrap Navbar structure can be placed here and customized -->
+        <!-- Or a completely custom header -->
+        <nav class="navbar navbar-expand-lg"> <!-- Add theme-specific navbar classes from main.css if desired, or style custom -->
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <!-- Suggested Image: Replace assets/ai-logo-generic.png -->
+                    <img src="assets/ai-logo-generic.png" alt="Product Logo" width="120" height="40" style="height: 40px;">
+                    <span id="productNamePlaceholder">Product Name</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavSkeleton" aria-controls="navbarNavSkeleton" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span> <!-- Ensure this is styled by Bootstrap or theme -->
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavSkeleton">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#section1">Section 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#section2">Section 2</a></li>
+                        <!-- Add more nav items as needed per template -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content: Each template will have its unique sections here -->
+    <main id="pageMain" class="site-main">
+
+        <!-- SECTION TEMPLATE START (Copy and customize for each section) -->
+        <!--
+        <section id="sectionName" class="section unique-section-class-for-this-template">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2>Section Title</h2>
+                        <p class="lead">Section subtitle or introductory text.</p>
+                    </div>
+                </div>
+                Add unique content, layout, components for this section
+            </div>
+        </section>
+        -->
+        <!-- SECTION TEMPLATE END -->
+
+        <!-- Placeholder for actual content - REMOVE THIS IN FINAL TEMPLATES -->
+        <section id="placeholder-section" class="section" style="min-height: 300px; display:flex; align-items:center; justify-content:center;">
+            <div class="container text-center">
+                <h1>Minimal Template Skeleton</h1>
+                <p class="lead">Replace this section and add your unique content blocks within the &lt;main&gt; element.</p>
+                <p>The chosen theme class on the &lt;body&gt; (e.g., 'theme-default') will apply base CSS variables from main.css.</p>
+                <p>Add template-specific CSS in the &lt;style&gt; block in the &lt;head&gt; or create specific classes in main.css.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer: To be custom designed for each template -->
+    <footer id="pageFooter" class="site-footer footer"> <!-- Using .footer for base styling from main.css -->
+        <div class="container text-center">
+            <p>&copy; <span id="currentYearPlaceholder">2024</span> <span id="productNameFooterPlaceholder">Product Name</span>. All rights reserved.</p>
+            <!-- Add other footer content like links, social icons per template design -->
+        </div>
+    </footer>
+
+    <!-- Template-Specific JavaScript - Add unique JS for this template here -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update dynamic content placeholders (examples)
+            const currentYear = new Date().getFullYear();
+            if(document.getElementById('currentYearPlaceholder')) {
+                document.getElementById('currentYearPlaceholder').textContent = currentYear;
+            }
+            // Product name placeholders would be set by the generation script for each template.
+
+            // Initialize any template-specific JS components here
+            // E.g., if this template uses a unique slider or GSAP animation:
+            // if (typeof gsap !== 'undefined') { /* GSAP animation code */ }
+
+            // Example: Initialize Parsley on a specific form for this template
+            // if ($('#templateSpecificForm').length) {
+            //     $('#templateSpecificForm').parsley().on('form:submit', function() { ... });
+            // }
+        });
+    </script>
+</body>
+</html>

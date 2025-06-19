@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- SEO Meta Tags - Update per page -->
@@ -88,488 +88,244 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('js', new Date());
   gtag('config', 'GA_MEASUREMENT_ID');
 </script> -->
-    <!-- Page-Specific Meta Content for TalkBot -->
-<script>
 
-        document.title = "TalkBot - Try Our Smartest Chatbot Now | AI Solutions";
-        document.querySelector('meta[name="description"]').setAttribute("content", "TalkBot is an AI-powered platform for talkbot. Try Our Smartest Chatbot Now");
-        document.querySelector('link[rel="canonical"]').setAttribute("href", "https://example.com/talkbot");
+    <!-- Template-Specific Metadata - To be dynamically updated by JS in each final template -->
+    <!-- This script block will be copied into each new template and customized -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pageTitle = "TalkBot - Your Friendly AI Chat Assistant | 24/7 Support";
+            const pageDescription = "Meet TalkBot, the AI chat assistant that makes customer interactions delightful and efficient. Provide instant answers, guide users, and boost engagement.";
+            const pageSlug = "talkbot";
+            const ogImage = "assets/ai-og-talkbot-v2-default.jpg";
+            const schemaType = "Service";
+            const productName = "TalkBot";
 
-        document.querySelector('meta[property="og:title"]').setAttribute("content", "TalkBot - Try Our Smartest Chatbot Now");
-        document.querySelector('meta[property="og:description"]').setAttribute("content", "Discover TalkBot. Try Our Smartest Chatbot Now");
-        document.querySelector('meta[property="og:image"]').setAttribute("content", "assets/ai-og-talkbot-default.jpg");
-        document.querySelector('meta[property="og:url"]').setAttribute("content", "https://example.com/talkbot");
+            document.title = pageTitle;
+            document.querySelector('meta[name="description"]').setAttribute("content", pageDescription);
+            document.querySelector('link[rel="canonical"]').setAttribute("href", `https://example.com/${pageSlug}`);
 
-        document.querySelector('meta[name="twitter:title"]').setAttribute("content", "TalkBot - Try Our Smartest Chatbot Now");
-        document.querySelector('meta[name="twitter:description"]').setAttribute("content", "TalkBot: Try Our Smartest Chatbot Now. Explore now.");
-        document.querySelector('meta[name="twitter:image"]').setAttribute("content", "assets/ai-og-talkbot-default.jpg");
+            document.querySelector('meta[property="og:title"]').setAttribute("content", pageTitle);
+            document.querySelector('meta[property="og:description"]').setAttribute("content", pageDescription);
+            document.querySelector('meta[property="og:image"]').setAttribute("content", ogImage);
+            document.querySelector('meta[property="og:url"]').setAttribute("content", `https://example.com/${pageSlug}`);
 
-        const schema = {
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "TalkBot",
-          "description": "TalkBot - Try Our Smartest Chatbot Now",
-          "url": "https://example.com/talkbot",
-          "potentialAction": { "@type": "InteractAction", "target": "https://example.com/talkbot#start" }
-          // Add more specific schema details based on SCHEMA_TYPE
-        };
-        // Remove existing schema script if any
-        var oldSchemaScript = document.querySelector('script[type="application/ld+json"]');
-        if (oldSchemaScript) oldSchemaScript.remove();
-        // Add new schema script
-        const schemaScript = document.createElement('script');
-        schemaScript.type = 'application/ld+json';
-        schemaScript.text = JSON.stringify(schema, null, 2); // Pretty print JSON
-        document.head.appendChild(schemaScript);
+            document.querySelector('meta[name="twitter:title"]').setAttribute("content", pageTitle);
+            document.querySelector('meta[name="twitter:description"]').setAttribute("content", pageDescription);
+            document.querySelector('meta[name="twitter:image"]').setAttribute("content", ogImage);
 
-</script>
+            const schema = {
+              "@context": "https://schema.org",
+              "@type": schemaType,
+              "name": productName,
+              "description": pageDescription,
+              "url": `https://example.com/${pageSlug}`,
+              "image": ogImage,
+            };
+            // No specific schema additions for "Service" type in this example, but could be added
+            // if (schemaType === 'Service') { ... }
+
+            let oldSchemaScript = document.querySelector('script[type="application/ld+json"]');
+            if (oldSchemaScript && oldSchemaScript.parentElement === document.head) {
+                 oldSchemaScript.remove();
+            }
+            const schemaScriptTag = document.createElement('script');
+            schemaScriptTag.type = 'application/ld+json';
+            schemaScriptTag.text = JSON.stringify(schema, null, 2);
+            document.head.appendChild(schemaScriptTag);
+
+            const currentYear = new Date().getFullYear();
+            if(document.getElementById('currentYearPlaceholder')) {
+                document.getElementById('currentYearPlaceholder').textContent = currentYear;
+            }
+            if(document.getElementById('productNamePlaceholder')) {
+                document.getElementById('productNamePlaceholder').textContent = productName;
+            }
+            if(document.getElementById('productNameFooterPlaceholder')) {
+                document.getElementById('productNameFooterPlaceholder').textContent = productName;
+            }
+        });
+    </script>
+
+<style>
+    /* TalkBot Specific Styles - theme-friendly provides base vars */
+    body.theme-friendly { --theme-primary-color: #3182CE; --theme-secondary-color: #63B3ED; background-color: #F0F8FF; }
+    .talkbot-hero { background: linear-gradient(135deg, #EBF8FF 0%, #BEE3F8 100%); }
+    .talkbot-hero-speech-bubble { background-color: #fff; padding: 2rem; border-radius: 25px 25px 25px 5px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+    .talkbot-brand-accent { color: var(--theme-primary-color); }
+    .talkbot-hero-cta { font-size: 1.1rem; padding: 0.9rem 2.2rem; }
+    .talkbot-hero-image { max-width: 100%; height: auto; }
+    .talkbot-mascot-avatar { border-radius: 50%; box-shadow: 0 4px 15px rgba(49,130,206,0.2); }
+    .bg-light-alt { background-color: #EBF8FF; }
+    .talkbot-feature-strip { background: #fff; border-radius: 12px; margin-bottom: 1rem; box-shadow: 0 3px 10px rgba(0,0,0,0.05); cursor: pointer; }
+    .talkbot-feature-strip .strip-header { display: flex; align-items: center; padding: 1rem 1.5rem; }
+    .talkbot-feature-strip .strip-header h4 { margin-bottom: 0; flex-grow: 1; color: #2C5282; }
+    .talkbot-feature-strip .strip-toggle-icon { transition: transform 0.3s ease; color: var(--theme-primary-color); }
+    .talkbot-feature-strip .strip-content { padding: 0 1.5rem 1rem 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.4s ease-out; }
+    .talkbot-feature-strip.open .strip-content { max-height: 200px; padding-top: 0.5rem; }
+    .talkbot-feature-strip.open .strip-toggle-icon { transform: rotate(180deg); }
+    .talkbot-comic-panel { background: #fff; padding: 1.5rem; border-radius: 16px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08); height:100%; }
+    .talkbot-comic-panel img { border-radius: 8px; margin-bottom: 1rem; }
+    .talkbot-comic-panel h5 { color: #2C5282; margin-bottom: 0.5rem; }
+</style>
 </head>
-<body class="theme-friendly"> <!-- Applying Glassmorphism theme -->
+<body class="theme-friendly"> <!-- Placeholder theme, change for each template -->
 
-    <!-- Google Tag Manager (noscript) Placeholder -->
+    <!-- Google Tag Manager (noscript) Placeholder - from common_head.html if not already there -->
     <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
-    <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Header/Navigation -->
-    <header class="navbar navbar-expand-lg fixed-top" data-aos="fade-down">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <!-- Suggested Image: A sleek, futuristic logo for TalkBot, perhaps incorporating an eye or neural network motif. Replace assets/ai-logo-generic.png -->
-                <img src="assets/ai-logo-generic.png" alt="TalkBot Logo" style="height: 40px;" class="lozad"> TalkBot
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#use-cases">Use Cases</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a></li>
-                    <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#hero">Try Now</a></li>
-                </ul>
+    <!-- Header: To be custom designed for each template -->
+    <header id="pageHeader" class="site-header">
+        <!-- Example: Basic Bootstrap Navbar structure can be placed here and customized -->
+        <!-- Or a completely custom header -->
+        <nav class="navbar navbar-expand-lg"> <!-- Add theme-specific navbar classes from main.css if desired, or style custom -->
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <!-- Suggested Image: Replace assets/ai-logo-generic.png -->
+                    <img src="assets/ai-logo-generic.png" alt="Product Logo" width="120" height="40" style="height: 40px;">
+                    <span id="productNamePlaceholder">Product Name</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavSkeleton" aria-controls="navbarNavSkeleton" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span> <!-- Ensure this is styled by Bootstrap or theme -->
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavSkeleton">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#section1">Section 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#section2">Section 2</a></li>
+                        <!-- Add more nav items as needed per template -->
+                    </ul>
+                </div>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="section hero-section full-height d-flex align-items-center text-center text-white" style="position: relative; overflow: hidden;">
-        <!-- Placeholder for Three.js Background -->
-        <!-- Suggested Element: A subtle, animated Three.js background depicting abstract neural activity or flowing light particles to enhance the 'glassy' theme. -->
-        <div id="threejs-hero-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: rgba(0,0,50,0.3);">
-            <!-- Developer Note: Initialize Three.js scene here in a <script> tag or via main.js -->
-        </div>
-        <div class="container" data-aos="fade-up">
-            <h1 class="display-3">Try Our Smartest Chatbot Now</h1>
-            <p class="lead my-4">Engage your customers 24/7 with TalkBot, the AI chat assistant that understands and responds like a human.</p>
-            <a href="#contact" class="btn btn-primary btn-lg">Try Our Smartest Chatbot Now</a>
-            <a href="#features" class="btn btn-outline-light btn-lg ms-2">Learn More</a>
-        </div>
-    </section>
+    <!-- Main Content: Each template will have its unique sections here -->
+    <main id="pageMain" class="site-main">
 
-    <!-- AI Feature Showcase -->
-    <section id="features" class="section">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2>Discover the Power of TalkBot</h2>
-                <p class="lead">Key functionalities that set TalkBot apart.</p>
+<section id="hero" class="section talkbot-hero overflow-hidden">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="talkbot-hero-speech-bubble">
+                    <h1 class="display-4">Meet <span class="talkbot-brand-accent">TalkBot</span>!</h1>
+                    <p class="lead my-3">Your friendly AI Chat Assistant, ready to delight users and streamline support 24/7.</p>
+                    <a href="#pricing" class="btn btn-primary btn-lg talkbot-hero-cta">Try TalkBot Free</a>
+                </div>
             </div>
-            <div class="row text-center">
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 p-4">
-                        <!-- Suggested Icon: Font Awesome icon like fa-brain, fa-lightbulb, or fa-image. Or custom AI-generated icon. -->
-                        <i class="fas fa-brain fa-3x text-primary mb-3"></i>
-                        <h4>Natural Language Understanding</h4>
-                        <p>Powered by advanced NLP to comprehend context, sentiment, and user intent accurately.</p>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                <!-- Placeholder for custom SVG illustration -->
+                <img src="assets/talkbot-hero-illustration.svg" alt="TalkBot AI Chat Assistant Illustration" class="img-fluid talkbot-hero-image" width="500" height="450">
+                <!-- Comment: Replace with actual SVG illustration or animation -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="meet-talkbot" class="section">
+    <div class="container text-center">
+        <img src="assets/talkbot-mascot.svg" alt="TalkBot Mascot" class="talkbot-mascot-avatar mb-3" width="150" height="150" data-aos="zoom-in-up">
+        <h2 data-aos="fade-up">Hello! I'm TalkBot.</h2>
+        <p class="lead col-md-8 mx-auto" data-aos="fade-up" data-aos-delay="100">I'm designed to be helpful, understanding, and always learning. My goal is to make every conversation a great experience!</p>
+    </div>
+</section>
+
+<section id="benefits" class="section bg-light-alt"> <!-- Assuming .bg-light-alt is defined in theme-friendly or template CSS -->
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 data-aos="fade-up">What TalkBot Can Do For You</h2>
+        </div>
+        <div class="row talkbot-feature-strips">
+            <!-- Feature Strip 1 -->
+            <div class="col-md-12 mb-3" data-aos="fade-up">
+                <div class="talkbot-feature-strip">
+                    <div class="strip-header">
+                        <i class="fas fa-comments me-2"></i><h4>Instant Answers</h4>
+                        <span class="strip-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="strip-content">
+                        <p>Provide immediate responses to common customer queries, reducing wait times and improving satisfaction. Trained on your data for accuracy.</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 p-4">
-                        <!-- Suggested Icon: fa-palette, fa-magic, or fa-cogs -->
-                        <i class="fas fa-magic fa-3x text-primary mb-3"></i>
-                        <h4>Omnichannel Support</h4>
-                        <p>Deploy TalkBot across your website, mobile app, and social media platforms seamlessly.</p>
+            </div>
+            <!-- Feature Strip 2 -->
+            <div class="col-md-12 mb-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="talkbot-feature-strip">
+                    <div class="strip-header">
+                        <i class="fas fa-user-friends me-2"></i><h4>Lead Generation</h4>
+                        <span class="strip-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="strip-content">
+                        <p>Qualify leads by asking targeted questions and seamlessly integrate with your CRM to pass on hot prospects to your sales team.</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 p-4">
-                        <!-- Suggested Icon: fa-bolt, fa-rocket, or fa-cloud-upload-alt -->
-                        <i class="fas fa-bolt fa-3x text-primary mb-3"></i>
-                        <h4>Easy Integration</h4>
-                        <p>Connect TalkBot with your existing CRM and helpdesk tools in just a few clicks.</p>
+            </div>
+            <!-- Feature Strip 3 -->
+            <div class="col-md-12 mb-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="talkbot-feature-strip">
+                    <div class="strip-header">
+                        <i class="fas fa-cogs me-2"></i><h4>Easy Setup</h4>
+                        <span class="strip-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="strip-content">
+                        <p>No coding required! Customize TalkBot's appearance, language, and responses through an intuitive dashboard. Embed on your site in minutes.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Use Cases / Benefits -->
-    <section id="use-cases" class="section bg-light-gray">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2>Enhance Customer Engagement</h2>
-                <p class="lead">Provide instant answers, guide users, and collect valuable feedback with TalkBot.</p>
+<section id="use-cases" class="section">
+    <div class="container">
+        <div class="text-center mb-5"><h2 data-aos="fade-up">Perfect For...</h2></div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
+                <div class="talkbot-comic-panel">
+                    <img src="assets/usecase-support.svg" alt="Customer Support Use Case" class="img-fluid mb-2" width="200" height="150">
+                    <h5>24/7 Customer Support</h5>
+                    <p>Answer FAQs and resolve issues even when your team is offline.</p>
+                </div>
             </div>
-            <div class="row" data-aos="fade-up">
-                <div class="col-md-6 col-lg-4 mb-3">
-                    <h5><i class="fas fa-paint-brush me-2 text-primary"></i>Artists & Designers</h5>
-                    <p>Create unique art pieces, concept designs, and inspiration for projects.</p>
+            <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="talkbot-comic-panel">
+                    <img src="assets/usecase-sales.svg" alt="Sales Assistant Use Case" class="img-fluid mb-2" width="200" height="150">
+                    <h5>Sales & Lead Capture</h5>
+                    <p>Engage website visitors and convert them into qualified leads.</p>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-3">
-                    <h5><i class="fas fa-bullhorn me-2 text-primary"></i>Marketers & Advertisers</h5>
-                    <p>Generate custom visuals for campaigns, social media, and ad creatives.</p>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-3">
-                    <h5><i class="fas fa-feather-alt me-2 text-primary"></i>Content Creators</h5>
-                    <p>Produce unique blog post headers, YouTube thumbnails, and presentation graphics.</p>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-3">
-                    <h5><i class="fas fa-gamepad me-2 text-primary"></i>Game Developers</h5>
-                    <p>Quickly prototype game assets, character designs, and environment concepts.</p>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-3">
-                    <h5><i class="fas fa-lightbulb me-2 text-primary"></i>Startups & Innovators</h5>
-                    <p>Visualize product ideas and create compelling pitch deck visuals.</p>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-3">
-                    <h5><i class="fas fa-camera-retro me-2 text-primary"></i>Photographers</h5>
-                    <p>Explore creative photo manipulations and artistic styles.</p>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="talkbot-comic-panel">
+                    <img src="assets/usecase-onboarding.svg" alt="User Onboarding Use Case" class="img-fluid mb-2" width="200" height="150">
+                    <h5>User Onboarding</h5>
+                    <p>Guide new users through your platform with interactive assistance.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+<!-- Pricing (button blocks), CTA, Footer -->
+<section class="section placeholder-section-temp"> <div class="container text-center"><p class="lead">[TalkBot: Other unique sections like Pricing (button blocks), Live Demo CTA, Integrations, Footer would be built here]</p></div></section>
 
-    <!-- Live Demo or Screenshot Animation -->
-    <section id="demo" class="section">
+    </main>
+
+    <!-- Footer: To be custom designed for each template -->
+    <footer id="pageFooter" class="site-footer footer"> <!-- Using .footer for base styling from main.css -->
         <div class="container text-center">
-            <div class="mb-5" data-aos="fade-up">
-                <h2>Perfect for support, sales, and marketing automation.</h2>
-                <p class="lead">See TalkBot in Conversation</p>
-            </div>
-            <!-- Suggested Image: An animated GIF or a short video loop showcasing the TalkBot interface generating an image from a text prompt. Replace assets/ai-product-showcase-1.png -->
-            <img data-src="assets/ai-product-showcase-1.png" alt="TalkBot Demo" class="img-fluid rounded shadow-lg lozad" data-aos="zoom-in-up">
-            <p class="mt-3 fst-italic">Comment: Placeholder for TalkBot demo. Replace with relevant screenshot, GIF or animation.</p>
-        </div>
-    </section>
-
-    <!-- Pricing Plans -->
-    <section id="pricing" class="section bg-light-gray">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2>Watch how TalkBot interacts naturally to solve user queries.</h2>
-                <p class="lead">Choose the plan that's right for you.</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 text-center">
-                        <div class="card-header"><h4>Free Trial</h4></div>
-                        <div class="card-body">
-                            <h5 class="card-title display-4">$0<small class="text-muted">/mo</small></h5>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>10 Image Generations</li>
-                                <li>Basic Quality</li>
-                                <li>Community Support</li>
-                                <li>Watermarked Images</li>
-                            </ul>
-                            <button type="button" class="btn btn-outline-primary">Start Free Trial</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 text-center border-primary">
-                        <div class="card-header bg-primary text-white"><h4>Creator</h4></div>
-                        <div class="card-body">
-                            <h5 class="card-title display-4">$19<small class="text-muted">/mo</small></h5>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>200 Image Generations</li>
-                                <li>High Quality</li>
-                                <li>Priority Support</li>
-                                <li>No Watermarks</li>
-                                <li>Access to Advanced Models</li>
-                            </ul>
-                            <button type="button" class="btn btn-primary">Get Started</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 text-center">
-                        <div class="card-header"><h4>Pro / API</h4></div>
-                        <div class="card-body">
-                            <h5 class="card-title display-4">$49<small class="text-muted">/mo</small></h5>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>1000 Image Generations</li>
-                                <li>Premium Quality & Styles</li>
-                                <li>Dedicated Support</li>
-                                <li>API Access</li>
-                                <li>Commercial Use License</li>
-                            </ul>
-                            <button type="button" class="btn btn-outline-primary">Contact Sales</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- API Docs or Integration Info (Tabbed) -->
-    <section id="api-info" class="section">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2>Plans for Every Business Size</h2>
-                <p class="lead">Powerful API for developers.</p>
-            </div>
-            <ul class="nav nav-tabs justify-content-center mb-4" id="apiTabs" role="tablist" data-aos="fade-up">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab" aria-controls="overview" aria-selected="true">Overview</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="authentication-tab" data-bs-toggle="tab" data-bs-target="#authentication" type="button" role="tab" aria-controls="authentication" aria-selected="false">Authentication</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="endpoints-tab" data-bs-toggle="tab" data-bs-target="#endpoints" type="button" role="tab" aria-controls="endpoints" aria-selected="false">Endpoints</button>
-                </li>
-            </ul>
-            <div class="tab-content" id="apiTabsContent" data-aos="fade-up" data-aos-delay="100">
-                <div class="tab-pane fade show active p-3" id="overview" role="tabpanel" aria-labelledby="overview-tab">
-                    <h4>API Overview</h4>
-                    <p>Our REST API allows you to integrate TalkBot's image generation capabilities directly into your applications, websites, or workflows. Get programmatic access to generate images, manage your account, and more. All responses are in JSON format.</p>
-                    <pre class="bg-light p-3 rounded"><code>// Example API Request (conceptual)
-POST /v1/generate
-Authorization: Bearer YOUR_API_KEY
-{
-  "prompt": "A futuristic cityscape at sunset, cyberpunk style",
-  "style": "photorealistic",
-  "aspect_ratio": "16:9"
-}</code></pre>
-                </div>
-                <div class="tab-pane fade p-3" id="authentication" role="tabpanel" aria-labelledby="authentication-tab">
-                    <h4>Authentication</h4>
-                    <p>Authenticate your API requests by including your API key in the Authorization header. Obtain your API key from your TalkBot dashboard.</p>
-                    <pre class="bg-light p-3 rounded"><code>Authorization: Bearer YOUR_API_KEY</code></pre>
-                </div>
-                <div class="tab-pane fade p-3" id="endpoints" role="tabpanel" aria-labelledby="endpoints-tab">
-                    <h4>Key Endpoints</h4>
-                    <ul>
-                        <li><strong>POST /v1/generate:</strong> Generate a new image based on a prompt and parameters.</li>
-                        <li><strong>GET /v1/images/{id}:</strong> Retrieve status or details of a generated image.</li>
-                        <li><strong>GET /v1/account/usage:</strong> Check your current API usage and limits.</li>
-                    </ul>
-                    <p><em>Full API documentation will be available upon signing up for an API plan.</em></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="section bg-light-gray">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2>Loved by Creators Worldwide</h2>
-            </div>
-            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="testimonial-card text-center p-4">
-                            <!-- Suggested Image: An AI-generated, diverse, and professional-looking avatar. Replace assets/ai-avatar-neutral.png -->
-                            <img data-src="assets/ai-avatar-neutral.png" class="rounded-circle mb-3 lozad" alt="User Avatar 1" style="width: 80px; height: 80px; object-fit: cover;">
-                            <p class="lead">"TalkBot has revolutionized my workflow. I can now generate stunning visuals for my blog in minutes!"</p>
-                            <h5 class="mt-3">- Alex P., Content Creator</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="testimonial-card text-center p-4">
-                            <!-- Suggested Image: Another unique AI-generated avatar. Replace assets/ai-avatar-neutral.png -->
-                            <img data-src="assets/ai-avatar-neutral.png" class="rounded-circle mb-3 lozad" alt="User Avatar 2" style="width: 80px; height: 80px; object-fit: cover;">
-                            <p class="lead">"The quality of images is outstanding. It's like having a professional artist on demand."</p>
-                            <h5 class="mt-3">- Sarah K., Marketing Manager</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="testimonial-card text-center p-4">
-                            <!-- Suggested Image: A third unique AI-generated avatar. Replace assets/ai-avatar-neutral.png -->
-                            <img data-src="assets/ai-avatar-neutral.png" class="rounded-circle mb-3 lozad" alt="User Avatar 3" style="width: 80px; height: 80px; object-fit: cover;">
-                            <p class="lead">"The API is robust and easy to integrate. We've built amazing features on top of TalkBot."</p>
-                            <h5 class="mt-3">- David L., Lead Developer</h5>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section id="final-cta" class="section text-center text-white" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/ai-hero-background-abstract.jpg') center center/cover no-repeat;">
-        <!-- Suggested Image for background: A different, perhaps more focused AI-generated abstract image than the hero. Replace assets/ai-hero-background-abstract.jpg -->
-        <div class="container" data-aos="fade-up">
-            <h2>Connect TalkBot with Your Systems</h2>
-            <p class="lead my-4">Ready for Smarter Conversations?</p>
-            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">Try Our Smartest Chatbot Now</button>
-        </div>
-    </section>
-
-    <!-- Contact Form (Modal) -->
-    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="contactModalLabel">Start Your AI Image Journey</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Fill out the form below to get started or inquire about our services.</p>
-                    <form id="leadCaptureForm" data-parsley-validate>
-                        <div class="mb-3">
-                            <label for="contactName" class="form-label">Full Name</label>
-                            <input type="text" class="form-control" id="contactName" name="name" required data-parsley-minlength="3">
-                        </div>
-                        <div class="mb-3">
-                            <label for="contactEmail" class="form-label">Email Address</label>
-                            <input type="email" class="form-control" id="contactEmail" name="email" required data-parsley-type="email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="contactProject" class="form-label">Tell us about your project (Optional)</label>
-                            <textarea class="form-control" id="contactProject" name="project" rows="3" data-parsley-maxlength="500"></textarea>
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="contactConsent" name="consent" required data-parsley-required-message="You must agree to the terms.">
-                            <label class="form-check-label" for="contactConsent">I agree to the <a href="#privacy" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a> and <a href="#terms" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#termsModal">Terms of Service</a>.</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Submit & Start Generating</button>
-                    </form>
-                    <div id="form-submission-feedback" class="mt-3"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Privacy Policy Modal (Placeholder) -->
-    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p><em>Placeholder for Privacy Policy content. Please replace this with your actual privacy policy.</em></p>
-                    <p>Last updated: [Date]</p>
-                    <p>TalkBot ("us", "we", or "our") operates the https://example.com/neurovision website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data...</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Terms of Service Modal (Placeholder) -->
-    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="termsModalLabel">Terms of Service</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p><em>Placeholder for Terms of Service content. Please replace this with your actual terms.</em></p>
-                    <p>Please read these Terms of Service ("Terms", "Terms of Service") carefully before using the https://example.com/neurovision website (the "Service") operated by TalkBot ("us", "we", or "our"). Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms...</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <h5>TalkBot AI</h5>
-                    <!-- Suggested Image: Same as header logo, possibly smaller or monochrome. Replace assets/ai-logo-generic.png -->
-                    <img data-src="assets/ai-logo-generic.png" alt="TalkBot Footer Logo" style="height: 30px; filter: brightness(0) invert(1);" class="lozad mb-2">
-                    <p>Generating the future of visuals, one prompt at a time.</p>
-                </div>
-                <div class="col-md-2 mb-3">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#api-info">API Docs</a></li>
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <h5>Legal</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a></li>
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <h5>Connect</h5>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr style="border-color: rgba(255,255,255,0.2);">
-            <div class="text-center">
-                <p>&copy; 2023 TalkBot. All rights reserved. AI for a Creative World.</p>
-                <p class="small">Disclaimer: TalkBot is a fictional product for template demonstration purposes.</p>
-            </div>
+            <p>&copy; <span id="currentYearPlaceholder">2024</span> <span id="productNameFooterPlaceholder">Product Name</span>. All rights reserved.</p>
+            <!-- Add other footer content like links, social icons per template design -->
         </div>
     </footer>
 
-    <!-- Placeholder for Three.js hero background script -->
+    <!-- Template-Specific JavaScript - Add unique JS for this template here -->
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Placeholder: Initialize Three.js for hero background if applicable
-        const heroBg = document.getElementById('threejs-hero-background');
-        if (heroBg && typeof THREE !== 'undefined') {
-            // console.log('Attempting to initialize Three.js for hero background.');
-            // Example:
-            // const scene = new THREE.Scene();
-            // const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            // const renderer = new THREE.WebGLRenderer({ alpha: true }); // alpha true for transparent bg
-            // renderer.setSize(window.innerWidth, window.innerHeight);
-            // heroBg.appendChild(renderer.domElement);
-            // camera.position.z = 5;
-            // function animate() {
-            //     requestAnimationFrame(animate);
-            //     // Add animation logic here
-            //     renderer.render(scene, camera);
-            // }
-            // animate();
-            // window.addEventListener('resize', () => {
-            //    renderer.setSize(window.innerWidth, window.innerHeight);
-            //    camera.aspect = window.innerWidth / window.innerHeight;
-            //    camera.updateProjectionMatrix();
-            // });
-            heroBg.innerHTML = '<p style="color: white; text-align: center; padding-top: 20%;">Three.js Background Placeholder - Implement Animation Here</p>';
-        }
-
-        // Parsley form validation init
-        $('#leadCaptureForm').parsley().on('form:submit', function() {
-            // This event is triggered when the form is valid and submitted
-            $('#form-submission-feedback').html('<div class="alert alert-success">Thank you! Your message has been sent. We will get back to you shortly.</div>');
-            // In a real application, you would submit the form data via AJAX here
-            // e.g., $.ajax({ url: 'your-endpoint', method: 'POST', data: $(this).serialize(), ... });
-            return false; // Prevent actual form submission for this demo
-        }).on('form:error', function() {
-            $('#form-submission-feedback').html('<div class="alert alert-danger">Please correct the errors in the form.</div>');
+document.addEventListener("DOMContentLoaded", function() {
+    const featureStrips = document.querySelectorAll(".talkbot-feature-strip");
+    featureStrips.forEach(strip => {
+        strip.addEventListener("click", function() {
+            this.classList.toggle("open");
         });
     });
-    </script>
-
+});
+</script>
 </body>
 </html>
