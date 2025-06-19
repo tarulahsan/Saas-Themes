@@ -207,270 +207,383 @@ body {
     border-color: rgba(236, 240, 241, 0.15) !important;
 }
 
-/* Ensure other theme placeholders remain untouched */
-/* 3.2 Matte Flat Modern Theme */
+/* 3.1 Glassmorphism Theme - Enhanced Responsiveness */
+/* Base styles from previous refinement are good */
+.theme-glassy .hero-section { padding: 80px 0; /* Ensure enough padding on all screens */ }
+.theme-glassy .card { margin-bottom: 1.5rem; /* Ensure cards stack with space on mobile */ }
 
+@media (max-width: 992px) { /* Medium devices (tablets, less than 992px) */
+    .theme-glassy .hero-section h1 { font-size: 2.8rem; }
+    .theme-glassy .hero-section .lead { font-size: 1.15rem; }
+}
+@media (max-width: 768px) { /* Small devices (landscape phones, less than 768px) */
+    .theme-glassy .hero-section { padding: 60px 0; }
+    .theme-glassy .hero-section h1 { font-size: 2.2rem; }
+    .theme-glassy .hero-section .lead { font-size: 1rem; }
+    .theme-glassy .section { padding: 40px 0; }
+    .theme-glassy .pricing .card, .theme-glassy .features .card { margin-left: auto; margin-right: auto; max-width: 400px; }
+}
+@media (max-width: 576px) { /* Extra small devices (portrait phones, less than 576px) */
+    .theme-glassy .hero-section h1 { font-size: 1.8rem; }
+    .theme-glassy .hero-section .lead { font-size: 0.9rem; }
+    .theme-glassy .navbar-brand img { max-height: 30px !important; } /* Ensure logo is not too big */
+}
+
+/* Ensure other theme placeholders remain untouched */
+/* 3.2 Matte Flat Modern Theme - Enhanced */
 .theme-matte body, body.theme-matte {
-    background-color: #2d3436; /* Dark grey-blue */
-    color: #dfe6e9;
+    background-color: #2c3338; /* Slightly refined dark base */
+    color: #e8eaed; /* Light grey for text */
     font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
 }
 .theme-matte .navbar {
-    background-color: #252a2c;
-    border-bottom: 1px solid #4a5355;
+    background-color: #22272b; /* Darker navbar */
+    border-bottom: 1px solid #3a4146;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
-.theme-matte .navbar .nav-link, .theme-matte .navbar .navbar-brand { color: #dfe6e9; }
-.theme-matte .navbar .nav-link:hover { color: #ffffff; }
-.theme-matte .navbar .navbar-toggler-icon { filter: invert(1); }
-
-.theme-matte .card {
-    background-color: #3b4446;
-    border: 1px solid #4a5355;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    color: #dfe6e9;
+.theme-matte .navbar .navbar-brand {
+    font-weight: 700;
+    color: #e8eaed;
 }
-.theme-matte .card h1, .theme-matte .card h2, .theme-matte .card h3, .theme-matte .card h4 { color: #ffffff; }
-.theme-matte .btn-primary {
-    background-color: #0984e3; /* Bright blue */
-    border-color: #0984e3;
+.theme-matte .navbar .nav-link {
+    color: #b0b3b8; /* Lighter than body text for differentiation */
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+}
+.theme-matte .navbar .nav-link:hover, .theme-matte .navbar .nav-link.active {
     color: #ffffff;
 }
-.theme-matte .btn-primary:hover { background-color: #2e9fff; border-color: #2e9fff; }
-.theme-matte .text-primary { color: #0984e3 !important; }
-.theme-matte .form-control { background-color: #4a5355; border-color: #5f6b6e; color: #dfe6e9; }
-.theme-matte .form-control:focus { background-color: #5f6b6e; border-color: #0984e3; color: #dfe6e9; }
-.theme-matte .modal-content { background-color: #2d3436; border-color: #4a5355; color: #dfe6e9; }
-.theme-matte hr { border-color: #4a5355 !important; }
-/* TODO: Add light mode toggle if time permits */
-
-.theme-matte body, body.theme-matte {
-    background-color: #333333; /* Dark mode default */
-    color: #f5f5f5;
-    /* Add light mode toggle styles later */
+.theme-matte .navbar .navbar-toggler {
+    border-color: #555;
 }
-.theme-matte .card {
-    background-color: #444444;
-    border: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+.theme-matte .navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28232, 234, 237, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
-.theme-matte .btn-primary {
-    background-color: #5E81AC; /* Example color */
-    border-color: #5E81AC;
-}
-/* Add more specific matte styles here */
 
-/* 3.3 Vibrant & Neon Theme */
-
-.theme-vibrant body, body.theme-vibrant {
-    background-color: #141E30; /* Deep blue */
-    background-image: linear-gradient(to right, #141E30, #243B55);
-    color: #f0f0f0;
+.theme-matte h1, .theme-matte h2, .theme-matte h3, .theme-matte h4, .theme-matte h5, .theme-matte h6 {
     font-family: 'Lexend', sans-serif;
+    color: #ffffff;
+    font-weight: 600;
 }
-.theme-vibrant .navbar {
-    background: rgba(20, 30, 48, 0.8);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-.theme-vibrant .navbar .nav-link, .theme-vibrant .navbar .navbar-brand { color: #f0f0f0; }
-.theme-vibrant .navbar .nav-link:hover { color: #ff416c; } /* Neon pink hover */
-.theme-vibrant .navbar .navbar-toggler-icon { filter: invert(1); }
+.theme-matte .display-3 { font-size: 2.8rem; margin-bottom: 1.5rem; }
+.theme-matte .lead { font-size: 1.15rem; color: #b0b3b8; margin-bottom: 2rem; }
 
-.theme-vibrant .card {
-    background-color: rgba(36, 59, 85, 0.7);
-    border: 1px solid #ff416c; /* Neon pink border */
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(255, 65, 108, 0.3);
-    color: #f0f0f0;
+.theme-matte .card {
+    background-color: #353c41; /* Slightly lighter card bg */
+    border: 1px solid #4a5157;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Softer shadow */
+    color: #e8eaed;
+    border-radius: 8px; /* Consistent rounding */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
-.theme-vibrant .card h1, .theme-vibrant .card h2, .theme-vibrant .card h3, .theme-vibrant .card h4 { color: #ffffff; text-shadow: 0 0 5px rgba(255, 65, 108, 0.5); }
-.theme-vibrant .btn-primary, .theme-vibrant .cta-button {
-    background: linear-gradient(45deg, #ff4b2b, #ff416c); /* Orange to Pink Gradient */
-    color: white;
-    border: none;
-    box-shadow: 0 0 10px #ff416c;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding: 12px 25px;
-    border-radius: 50px; /* Pill shape */
+.theme-matte .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
-.theme-vibrant .btn-primary:hover { box-shadow: 0 0 20px #ff416c; transform: scale(1.05); }
-.theme-vibrant .text-primary { color: #ff416c !important; }
-.theme-vibrant .form-control { background-color: rgba(255,255,255,0.1); border-color: #ff416c; color: #f0f0f0; }
-.theme-vibrant .form-control:focus { border-color: #ff4b2b; box-shadow: 0 0 5px #ff4b2b; }
-.theme-vibrant .modal-content { background-color: #141E30; border: 1px solid #ff416c; }
-.theme-vibrant hr { border-color: #ff416c !important; opacity: 0.5; }
+.theme-matte .card .card-header {
+    background-color: #3a4146;
+    border-bottom: 1px solid #4a5157;
+    font-weight: 600;
+}
+.theme-matte .card .text-primary { color: #3498db !important; } /* Refined primary blue */
 
-.theme-vibrant body, body.theme-vibrant {
-    background-color: #1a1a2e; /* Dark base for neon */
-    color: #e0e0e0;
+.theme-matte .btn { border-radius: 6px; padding: 0.75rem 1.5rem; font-weight: 500; transition: all 0.2s ease; }
+.theme-matte .btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+    color: #ffffff;
 }
-.theme-vibrant .btn-primary, .theme-vibrant .cta-button {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    color: white;
-    border: none;
-    box-shadow: 0 0 15px #e6683c;
-}
-.theme-vibrant h1, .theme-vibrant h2 {
-    color: #82eefd; /* Neon text example */
-}
-/* Add more specific vibrant/neon styles here */
+.theme-matte .btn-primary:hover { background-color: #2980b9; border-color: #2980b9; transform: translateY(-2px); }
+.theme-matte .btn-outline-light { color: #e8eaed; border-color: #777; }
+.theme-matte .btn-outline-light:hover { background-color: #e8eaed; color: #2c3338; }
 
-/* 3.4 Minimal & Elegant Theme */
-
-.theme-elegant body, body.theme-elegant {
-    background-color: #f8f9fa; /* Off-white */
-    color: #212529; /* Dark grey */
-    font-family: 'Inter', serif; /* Serif for elegance */
-}
-.theme-elegant .navbar {
-    background-color: #ffffff;
-    border-bottom: 1px solid #dee2e6;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-.theme-elegant .navbar .nav-link, .theme-elegant .navbar .navbar-brand { color: #212529; }
-.theme-elegant .navbar .nav-link:hover { color: #0056b3; } /* Subtle blue hover */
-
-.theme-elegant .card {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.07); /* Softer, larger shadow */
+.theme-matte .form-control {
+    background-color: #3a4146;
+    border-color: #5a6166;
+    color: #e8eaed;
     border-radius: 6px;
+    padding: 0.75rem 1rem;
+}
+.theme-matte .form-control:focus {
+    background-color: #3a4146;
+    border-color: #3498db;
+    color: #e8eaed;
+    box-shadow: 0 0 0 0.2rem rgba(52,152,219,.25);
+}
+.theme-matte .form-check-input:checked { background-color: #3498db; border-color: #3498db; }
+.theme-matte .modal-content { background-color: #2c3338; border: 1px solid #4a5157; color: #e8eaed; border-radius: 8px; }
+.theme-matte .modal-header, .theme-matte .modal-footer { border-color: #4a5157; }
+.theme-matte hr { border-color: #4a5157 !important; }
+.theme-matte .nav-tabs .nav-link { color: #b0b3b8; border-color: transparent; }
+.theme-matte .nav-tabs .nav-link.active, .theme-matte .nav-tabs .nav-link:hover {
+    color: #ffffff;
+    background-color: #353c41;
+    border-bottom-color: #3498db;
+}
+
+/* Responsive adjustments for matte theme */
+@media (max-width: 768px) {
+    .theme-matte .display-3 { font-size: 2.2rem; }
+    .theme-matte .lead { font-size: 1rem; }
+    .theme-matte .section { padding: 40px 0; }
+}
+
+
+/* 3.3 Vibrant & Neon Theme - Enhanced */
+/* Base styles good */
+.theme-vibrant .navbar .navbar-brand { font-weight: bold; text-shadow: 0 0 8px rgba(255, 65, 108, 0.7); }
+.theme-vibrant h1, .theme-vibrant h2, .theme-vibrant h3, .theme-vibrant h4 {
+    font-family: 'Lexend', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+.theme-vibrant .display-3 { font-size: 3rem; text-shadow: 0 0 10px rgba(255, 65, 108, 0.5); margin-bottom: 1.5rem; }
+.theme-vibrant .lead { font-size: 1.2rem; color: #e0e0e0; margin-bottom: 2rem; }
+.theme-vibrant .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.theme-vibrant .card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 25px rgba(255, 65, 108, 0.5);
+}
+.theme-vibrant .card .text-primary { color: #ff416c !important; } /* Ensure primary text uses neon color */
+.theme-vibrant .btn-primary, .theme-vibrant .cta-button { /* Base good */ transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.theme-vibrant .btn-primary:hover, .theme-vibrant .cta-button:hover { transform: scale(1.05) translateY(-2px); box-shadow: 0 0 20px #ff416c; }
+.theme-vibrant .form-control:focus { box-shadow: 0 0 10px #ff4b2b; }
+.theme-vibrant .nav-tabs .nav-link { color: #f0f0f0; border-bottom: 2px solid transparent; }
+.theme-vibrant .nav-tabs .nav-link.active, .theme-vibrant .nav-tabs .nav-link:hover {
+    color: #ff416c;
+    background-color: rgba(255,255,255,0.05);
+    border-bottom-color: #ff416c;
+}
+@media (max-width: 768px) {
+    .theme-vibrant .display-3 { font-size: 2.4rem; }
+    .theme-vibrant .lead { font-size: 1.1rem; }
+}
+
+
+/* 3.4 Minimal & Elegant Theme - Enhanced */
+/* Base good, ensure Inter is primary text font */
+.theme-elegant body, body.theme-elegant { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.8; }
+.theme-elegant .navbar .navbar-brand { font-family: 'Lexend', sans-serif; font-weight: 500; }
+.theme-elegant h1, .theme-elegant h2, .theme-elegant h3, .theme-elegant h4, .theme-elegant h5, .theme-elegant h6 {
+    font-family: 'Lexend', sans-serif; /* Lexend for headings */
+    font-weight: 600; /* Slightly bolder */
     color: #212529;
 }
-.theme-elegant .card h1, .theme-elegant .card h2, .theme-elegant .card h3, .theme-elegant .card h4 { color: #343a40; font-family: 'Lexend', sans-serif; }
-.theme-elegant .btn-primary {
-    background-color: #343a40; /* Dark Charcoal */
-    border-color: #343a40;
-    color: #ffffff;
-    font-weight: 500; /* Medium weight */
-    letter-spacing: 0.3px;
-    border-radius: 4px;
-    padding: 10px 20px;
-}
-.theme-elegant .btn-primary:hover { background-color: #212529; border-color: #212529; }
-.theme-elegant .text-primary { color: #0056b3 !important; } /* Standard blue for accents */
-.theme-elegant .form-control { background-color: #ffffff; border-color: #ced4da; color: #495057; }
-.theme-elegant .form-control:focus { border-color: #0056b3; box-shadow: 0 0 0 0.2rem rgba(0,86,179,.25); }
-.theme-elegant .modal-content { background-color: #f8f9fa; border: none; box-shadow: 0 5px 25px rgba(0,0,0,0.1); }
-.theme-elegant hr { border-color: #dee2e6 !important; }
-
-.theme-elegant body, body.theme-elegant {
-    background-color: #ffffff;
-    color: #333333;
-    font-family: 'Inter', sans-serif;
-}
+.theme-elegant .display-3 { font-size: 3rem; margin-bottom: 1.5rem; }
+.theme-elegant .lead { font-size: 1.15rem; color: #495057; margin-bottom: 2.5rem; } /* More margin for whitespace */
 .theme-elegant .card {
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06); /* Slightly more pronounced shadow */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
-.theme-elegant .btn-primary {
-    background-color: #252525;
-    border-color: #252525;
-    font-weight: bold;
-    letter-spacing: 0.5px;
+.theme-elegant .card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+.theme-elegant .card .card-header { background-color: transparent; border-bottom: 1px solid #e9ecef; padding: 1rem 1.25rem; }
+.theme-elegant .btn { border-radius: 5px; padding: 0.7rem 1.4rem; }
+.theme-elegant .btn-outline-dark { border-color: #dee2e6; color: #343a40; }
+.theme-elegant .btn-outline-dark:hover { background-color: #343a40; color: #fff; }
+.theme-elegant .form-control { border-radius: 5px; padding: 0.7rem 1rem; }
+.theme-elegant .modal-content { border-radius: 8px; }
+.theme-elegant .nav-tabs .nav-link { color: #495057; border-bottom-width: 2px; }
+.theme-elegant .nav-tabs .nav-link.active, .theme-elegant .nav-tabs .nav-link:hover {
+    color: #0056b3;
+    border-color: #dee2e6 #dee2e6 #0056b3; /* Active tab underline */
 }
-/* Add more specific elegant styles here */
+@media (max-width: 768px) {
+    .theme-elegant .display-3 { font-size: 2.4rem; }
+    .theme-elegant .lead { font-size: 1.05rem; }
+}
 
-/* 3.5 Sci-fi/Hacker Theme */
+/* 3.5 Sci-fi/Hacker Theme - Enhanced */
 .theme-scifi body, body.theme-scifi {
-    background-color: #000000;
-    color: #00ff00; /* Classic green terminal text */
+    background-color: #0a0f0f; /* Darker, slightly green-tinted black */
+    color: #00ff41; /* Main green */
     font-family: 'Space Grotesk', monospace;
+    font-size: 17px; /* Slightly larger base for monospace */
+    line-height: 1.7;
 }
-.theme-scifi .card, .theme-scifi .navbar {
-    border: 1px solid #00ff00;
-    background-color: rgba(0, 20, 0, 0.8);
+.theme-scifi .navbar {
+    background-color: rgba(10, 15, 15, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #008f21; /* Darker green border */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
+.theme-scifi .navbar .navbar-brand { font-weight: 700; color: #00ff41; text-shadow: 0 0 5px #00ff41; }
+.theme-scifi .navbar .nav-link { color: #00cc34; font-weight: 500; padding: 0.5rem 1rem; }
+.theme-scifi .navbar .nav-link:hover, .theme-scifi .navbar .nav-link.active { color: #33ff66; text-shadow: 0 0 3px #33ff66; }
+.theme-scifi .navbar .navbar-toggler { border-color: #008f21; }
+.theme-scifi .navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 255, 65, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.theme-scifi h1, .theme-scifi h2, .theme-scifi h3, .theme-scifi h4, .theme-scifi h5, .theme-scifi h6 {
+    font-family: 'Space Grotesk', monospace; /* Ensure headings also use it */
+    color: #33ff66; /* Slightly lighter green for headings */
+    text-transform: uppercase; /* Common in sci-fi UIs */
+    letter-spacing: 1px;
+    text-shadow: 0 0 2px rgba(0,255,65,0.5);
+}
+.theme-scifi .display-3 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+.theme-scifi .lead { font-size: 1.1rem; color: #00cc34; margin-bottom: 2rem; }
+
+.theme-scifi .card {
+    background-color: rgba(10, 25, 15, 0.7); /* Dark, transparent green */
+    border: 1px solid #008f21;
+    box-shadow: 0 0 15px rgba(0,255,65,0.1);
+    color: #00ff41;
+    border-radius: 4px; /* Sharp edges */
+    padding: 1.5rem;
+}
+.theme-scifi .card:hover { border-color: #00ff41; box-shadow: 0 0 20px rgba(0,255,65,0.2); }
+.theme-scifi .card .card-header {
+    background-color: rgba(10,30,15,0.9);
+    border-bottom: 1px solid #008f21;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.75rem 1.25rem;
+}
+.theme-scifi .card .text-primary { color: #33ff66 !important; }
+
+.theme-scifi .btn { border-radius: 2px; padding: 0.6rem 1.2rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.2s ease; }
 .theme-scifi .btn-primary {
-    color: #000000;
-    background-color: #00ff00;
-    border-color: #00ff00;
+    background-color: #00ff41;
+    border-color: #00ff41;
+    color: #0a0f0f; /* Dark background for text on bright button */
 }
-/* Add more specific scifi styles here */
+.theme-scifi .btn-primary:hover { background-color: #33ff66; border-color: #33ff66; color: #000; box-shadow: 0 0 10px #00ff41; }
+.theme-scifi .btn-outline-light { color: #00ff41; border-color: #008f21; }
+.theme-scifi .btn-outline-light:hover { background-color: #00ff41; color: #0a0f0f; border-color: #00ff41; }
 
-/* 3.6 Friendly/Playful Theme */
-
-.theme-friendly body, body.theme-friendly {
-    background-color: #eef7f2; /* Very light green/blue */
-    color: #333;
-    font-family: 'Lexend', sans-serif; /* Rounded, friendly font */
+.theme-scifi .form-control {
+    background-color: rgba(0,0,0,0.3);
+    border: 1px solid #008f21;
+    color: #00ff41;
+    border-radius: 2px;
+    padding: 0.75rem 1rem;
 }
-.theme-friendly .navbar {
-    background-color: #ffffff;
-    border-bottom: 1px solid #d1e0d5;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+.theme-scifi .form-control:focus {
+    background-color: rgba(0,0,0,0.5);
+    border-color: #00ff41;
+    color: #00ff41;
+    box-shadow: 0 0 8px rgba(0,255,65,.3);
 }
-.theme-friendly .navbar .nav-link, .theme-friendly .navbar .navbar-brand { color: #2c6e49; /* Friendly green */ }
-.theme-friendly .navbar .nav-link:hover { color: #4c956c; }
+.theme-scifi .form-check-input { background-color: transparent; border: 1px solid #008f21; }
+.theme-scifi .form-check-input:checked { background-color: #00ff41; border-color: #00ff41; }
+.theme-scifi .modal-content { background-color: rgba(10, 15, 15, 0.95); backdrop-filter: blur(5px); border: 1px solid #008f21; color: #00ff41; border-radius: 4px; }
+.theme-scifi .modal-header, .theme-scifi .modal-footer { border-color: #008f21; }
+.theme-scifi hr { border-color: #008f21 !important; opacity: 0.5; }
+.theme-scifi .nav-tabs .nav-link { color: #00cc34; border-color: transparent; text-transform: uppercase; }
+.theme-scifi .nav-tabs .nav-link.active, .theme-scifi .nav-tabs .nav-link:hover {
+    color: #33ff66;
+    background-color: rgba(0,0,0,0.2);
+    border-bottom-color: #00ff41;
+}
 
+/* Responsive adjustments for scifi theme */
+@media (max-width: 768px) {
+    .theme-scifi .display-3 { font-size: 2rem; }
+    .theme-scifi .lead { font-size: 1rem; }
+    .theme-scifi .section { padding: 30px 0; }
+}
+
+/* 3.6 Friendly/Playful Theme - Enhanced */
+/* Base good */
+.theme-friendly body, body.theme-friendly { font-size: 16.5px; line-height: 1.75; }
+.theme-friendly .navbar { padding-top: 1rem; padding-bottom: 1rem; }
+.theme-friendly .navbar .navbar-brand { font-weight: bold; }
+.theme-friendly h1, .theme-friendly h2, .theme-friendly h3, .theme-friendly h4 {
+    font-family: 'Lexend', sans-serif; /* Already set, ensure consistency */
+    font-weight: 600; /* Friendly but clear */
+    color: #1a535c; /* Darker shade of friendly green */
+}
+.theme-friendly .display-3 { font-size: 2.8rem; margin-bottom: 1.5rem; }
+.theme-friendly .lead { font-size: 1.15rem; color: #495057; margin-bottom: 2rem; }
 .theme-friendly .card {
-    background-color: #ffffff;
-    border: 1px solid #d1e0d5;
-    border-radius: 16px; /* More rounded */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    color: #333;
+    border-radius: 20px; /* Even more rounded */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.theme-friendly .card h1, .theme-friendly .card h2, .theme-friendly .card h3, .theme-friendly .card h4 { color: #2c6e49; }
-.theme-friendly .btn-primary {
-    background-color: #4c956c; /* Friendly green */
-    border-color: #4c956c;
-    color: #ffffff;
-    border-radius: 50px; /* Pill shape */
-    padding: 10px 25px;
-    font-weight: bold;
-}
-.theme-friendly .btn-primary:hover { background-color: #2c6e49; border-color: #2c6e49; }
-.theme-friendly .text-primary { color: #4c956c !important; }
-.theme-friendly .form-control { background-color: #ffffff; border-color: #b8d1be; border-radius: 8px; }
-.theme-friendly .form-control:focus { border-color: #4c956c; box-shadow: 0 0 0 0.2rem rgba(76,149,108,.25); }
-.theme-friendly .modal-content { background-color: #eef7f2; border-radius: 16px; }
-.theme-friendly .chat-bubble { /* Example for chat bot */
+.theme-friendly .card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+.theme-friendly .card .card-header { background-color: #f0fff5; border-bottom: 1px solid #cce8d4; border-top-left-radius: 20px; border-top-right-radius: 20px; }
+.theme-friendly .btn { padding: 0.7rem 1.5rem; font-weight: 500; }
+.theme-friendly .btn-primary { box-shadow: 0 2px 5px rgba(0,0,0,0.1); } /* Base good (pill shape) */
+.theme-friendly .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(76,149,108,.3); }
+.theme-friendly .form-control { border-radius: 25px; padding: 0.7rem 1.2rem; } /* Pill shape forms */
+.theme-friendly .modal-content { border-radius: 20px; }
+.theme-friendly .chat-bubble { box-shadow: 0 2px 4px rgba(0,0,0,0.1); } /* Base good */
+.theme-friendly .nav-tabs .nav-link { border-radius: 20px 20px 0 0; color: #2c6e49; }
+.theme-friendly .nav-tabs .nav-link.active, .theme-friendly .nav-tabs .nav-link:hover {
+    color: #fff;
     background-color: #4c956c;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 20px 20px 20px 5px; /* Bubble shape */
-    display: inline-block;
-    max-width: 80%;
 }
-.theme-friendly hr { border-color: #d1e0d5 !important; }
+@media (max-width: 768px) {
+    .theme-friendly .display-3 { font-size: 2.3rem; }
+    .theme-friendly .lead { font-size: 1rem; }
+}
 
-.theme-friendly body, body.theme-friendly {
-    background-color: #e0f7fa; /* Light, friendly blue */
-    color: #263238;
-    font-family: 'Lexend', sans-serif; /* Rounded font */
+/* 3.7 Retro / Cyber UI Theme - Enhanced */
+/* Base good */
+.theme-retro body, body.theme-retro { font-size: 16px; line-height: 1.6; }
+.theme-retro .navbar {
+    background: rgba(29, 15, 50, 0.85); /* Slightly more opaque */
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid #ff00ff; /* Magenta border */
+    box-shadow: 0 0 15px rgba(255,0,255,0.3);
 }
-.theme-friendly .card {
-    border-radius: 15px;
-    border: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.theme-retro .navbar .navbar-brand { font-weight: bold; color: #00f0f0; text-shadow: 0 0 5px #00f0f0; }
+.theme-retro .navbar .nav-link { color: #ddddff; font-weight: 500; }
+.theme-retro .navbar .nav-link:hover, .theme-retro .navbar .nav-link.active { color: #00f0f0; text-shadow: 0 0 3px #00f0f0; }
+.theme-retro .navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 240, 240, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
-.theme-friendly .btn-primary {
-    background-color: #ff7043; /* Bright, friendly orange */
-    border-color: #ff7043;
-    border-radius: 25px;
-    padding: 10px 25px;
-}
-/* Add more specific friendly styles here */
 
-/* 3.7 Retro / Cyber UI Theme */
-.theme-retro body, body.theme-retro {
-    background-color: #1d0f32; /* Deep purple */
-    color: #ff00ff; /* Magenta text */
-    font-family: 'Space Grotesk', sans-serif;
+.theme-retro h1, .theme-retro h2, .theme-retro h3, .theme-retro h4 {
+    font-family: 'Space Grotesk', monospace;
+    color: #00f0f0; /* Cyan */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 3px rgba(0,240,240,0.7), 0 0 5px rgba(255,0,255,0.5); /* Cyan + Magenta shadow */
 }
-.theme-retro h1, .theme-retro h2, .theme-retro h3 {
-    /* text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff; */ /* Chrome text effect - can be performance heavy */
-    color: #00f0f0; /* Cyan highlight */
+.theme-retro .display-3 { font-size: 2.7rem; margin-bottom: 1.5rem; }
+.theme-retro .lead { font-size: 1.1rem; color: #ddddff; margin-bottom: 2rem; }
+.theme-retro .card {
+    background-color: rgba(40, 20, 70, 0.7); /* Darker purple, less transparent */
+    border: 2px solid #ff00ff; /* Magenta border */
+    box-shadow: 0 0 10px rgba(255,0,255,0.3), inset 0 0 10px rgba(0,240,240,0.2); /* Outer Magenta, Inner Cyan */
+    color: #ddddff;
+    border-radius: 0; /* Sharp edges */
 }
-.theme-retro .btn-primary {
-    background-color: #00f0f0;
-    color: #1d0f32;
-    border: 2px solid #ff00ff;
-    box-shadow: 0 0 10px #00f0f0;
+.theme-retro .card .card-header { background-color: rgba(50,30,80,0.8); border-bottom: 1px solid #ff00ff; text-transform: uppercase; }
+.theme-retro .card .text-primary { color: #00f0f0 !important; }
+.theme-retro .btn { border-radius: 0; padding: 0.7rem 1.4rem; font-weight: bold; text-transform: uppercase; transition: all 0.2s ease; }
+.theme-retro .btn-primary:hover { box-shadow: 0 0 15px #00f0f0, inset 0 0 5px #ff00ff; transform: scale(1.03); } /* Base good for btn-primary */
+.theme-retro .btn-outline-light { color: #00f0f0; border-color: #00f0f0; }
+.theme-retro .btn-outline-light:hover { background-color: #00f0f0; color: #1d0f32; border-color: #00f0f0; box-shadow: 0 0 10px #00f0f0; }
+.theme-retro .form-control {
+    background-color: rgba(0,0,0,0.4);
+    border: 1px solid #ff00ff;
+    color: #00f0f0;
+    border-radius: 0;
 }
-/* Add more specific retro styles here */
+.theme-retro .form-control:focus { background-color: rgba(0,0,0,0.6); border-color: #00f0f0; box-shadow: 0 0 8px rgba(0,240,240,.4); }
+.theme-retro .form-check-input { background-color: transparent; border: 1px solid #ff00ff; }
+.theme-retro .form-check-input:checked { background-color: #00f0f0; border-color: #00f0f0; }
+.theme-retro .modal-content { background-color: rgba(29, 15, 50, 0.95); border: 2px solid #ff00ff; color: #ddddff; border-radius: 0; }
+.theme-retro hr { border-color: #ff00ff !important; opacity: 0.6; }
+.theme-retro .nav-tabs .nav-link { color: #ddddff; border-color: transparent; text-transform: uppercase; }
+.theme-retro .nav-tabs .nav-link.active, .theme-retro .nav-tabs .nav-link:hover {
+    color: #00f0f0;
+    background-color: rgba(0,0,0,0.2);
+    border-bottom-color: #00f0f0;
+}
+@media (max-width: 768px) {
+    .theme-retro .display-3 { font-size: 2.2rem; }
+    .theme-retro .lead { font-size: 1rem; }
+}
 
 
 /* 4. Component Styles (e.g., buttons, cards, navbar - some will be Bootstrap overrides)
