@@ -90,9 +90,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script> -->
 
     <!-- Template-Specific Metadata - To be dynamically updated by JS in each final template -->
-    <!-- This script block will be copied into each new template and customized -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+
             const pageTitle = "NeuroVision - AI Image Generation So Real It Breathes";
             const pageDescription = "Experience the next level of AI image generation with NeuroVision. Create stunning, hyper-realistic visuals from text prompts instantly. Explore diverse styles and unleash your creativity.";
             const pageSlug = "neurovision";
@@ -148,10 +148,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         });
     </script>
 
-    <!-- Template-Specific CSS - Add unique styles for this template here -->
-    <style>
+
+<style>
     /* NeuroVision Specific Styles - theme-glassy provides base variables */
-    body.theme-glassy { --theme-primary-color: #00d1ff; --theme-secondary-color: #8A2BE2; /* BlueViolet */ }
+    body.theme-glassy { --theme-primary-color: #00d1ff; --theme-secondary-color: #8A2BE2; /* BlueViolet */ } /* padding-top is handled by main.css for theme-glassy */
     .hero-headline-gradient {
         background: linear-gradient(45deg, var(--theme-primary-color), var(--theme-secondary-color), #FF00E5);
         -webkit-background-clip: text;
@@ -160,37 +160,98 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         text-fill-color: transparent;
         font-weight: 800;
     }
-    .neurovision-cta-hero { /* Example of unique button */
+    .neurovision-cta-hero { /* CTA style for hero and pricing */
         background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
         border: 1px solid rgba(255,255,255,0.3); color: #fff;
-        padding: 15px 35px; border-radius: 50px; font-size: 1.1rem;
+        padding: 15px 35px; border-radius: 50px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.5px;
     }
-    .neurovision-cta-hero:hover { background: rgba(255,255,255,0.2); box-shadow: 0 0 15px rgba(255,255,255,0.3); }
-    .neurovision-prompt-input { background: rgba(0,0,0,0.2); border-color: rgba(255,255,255,0.2); color: #fff; }
-    #neurovisionImageGrid img { transition: transform 0.3s ease, opacity 0.3s ease; }
+    .neurovision-cta-hero:hover { background: rgba(255,255,255,0.2); box-shadow: 0 0 15px rgba(255,255,255,0.3); transform: translateY(-2px); }
+
+    .neurovision-prompt-input { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 0.75rem 1.25rem; border-radius: 10px; }
+    .neurovision-prompt-input::placeholder { color: rgba(255,255,255,0.5); }
+    #neurovisionImageGrid img { transition: transform 0.3s ease, opacity 0.3s ease; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
     #neurovisionImageGrid img:hover { transform: scale(1.05); opacity: 0.8; }
 
     .neurovision-timeline { position: relative; padding: 20px 0; }
-    .neurovision-timeline::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: rgba(255,255,255,0.1); margin-left: -2px; }
+    .neurovision-timeline::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: rgba(255,255,255,0.1); margin-left: -2px; border-radius: 2px; }
     .timeline-item { position: relative; margin-bottom: 50px; width: 50%; padding: 10px 40px; box-sizing: border-box; }
     .timeline-item.alt { left: 50%; }
-    .timeline-item:not(.alt)::after, .timeline-item.alt::after { content:""; position:absolute; width:20px; height:20px; background:rgba(255,255,255,0.3); border-radius:50%; top:15px; z-index:1;}
-    .timeline-item:not(.alt)::after { right: -10px; }
-    .timeline-item.alt::after { left: -10px; }
+    .timeline-item:not(.alt)::after, .timeline-item.alt::after { content:""; position:absolute; width:20px; height:20px; background:var(--theme-primary-color); border: 3px solid rgba(255,255,255,0.3); border-radius:50%; top:15px; z-index:1; box-shadow: 0 0 10px var(--theme-primary-color);}
+    .timeline-item:not(.alt)::after { right: -10px; } .timeline-item.alt::after { left: -10px; }
     .timeline-icon { position: absolute; top: 10px; font-size: 1.5rem; color: var(--theme-primary-color); background: rgba(0,0,0,0.3); padding:10px; border-radius:50%; z-index:2; }
     .timeline-item:not(.alt) .timeline-icon { right: -30px; transform: translateX(50%); }
     .timeline-item.alt .timeline-icon { left: -30px; transform: translateX(-50%); }
-    .neurovision-glassy-card { /* Apply deeper glassy styles */
-        background: rgba(var(--bs-body-color-rgb, 255,255,255), 0.05); backdrop-filter: blur(15px);
+    .neurovision-glassy-card {
+        background: rgba(var(--bs-body-color-rgb, 255,255,255), 0.05); backdrop-filter: blur(15px) saturate(120%);
         border: 1px solid rgba(var(--bs-body-color-rgb, 255,255,255), 0.1); border-radius: 15px; padding: 20px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     }
-    .bg-light-variant { background-color: rgba(var(--bs-body-color-rgb, 255,255,255), 0.03); /* For sections on glassy bg */ }
+    .bg-light-variant { background-color: rgba(var(--bs-body-color-rgb, 255,255,255), 0.02); }
 
-    @media (max-width: 768px) {
+    .neurovision-style-palette .neurovision-style-card { position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+    .neurovision-style-palette .neurovision-style-card img { display: block; transition: transform 0.3s ease; }
+    .neurovision-style-palette .neurovision-style-card:hover img { transform: scale(1.1); }
+    .neurovision-style-palette .style-card-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.7); color: #fff; padding: 8px; text-align: center; font-size: 0.9rem; transition: opacity 0.3s ease; opacity: 0; }
+    .neurovision-style-palette .neurovision-style-card:hover .style-card-caption { opacity: 1; }
+
+    .neurovision-pricing-card { padding: 2rem 1.5rem; display: flex; flex-direction: column; height: 100%; }
+    .neurovision-pricing-card h4 { font-size: 1.3rem; font-weight: 600; color: var(--headings-color); margin-bottom: 1rem; }
+    .neurovision-pricing-card .price { color: var(--theme-primary-color); font-weight: 700; }
+    .neurovision-pricing-card .price small { font-size: 0.5em; color: var(--text-color); }
+    .neurovision-pricing-card ul { margin: 1.5rem 0; padding-left: 0; list-style:none; } /* Ensure no bullets */
+    .neurovision-pricing-card ul li { margin-bottom: 0.5rem; }
+    .neurovision-pricing-card.highlighted-plan { border-color: var(--theme-primary-color); box-shadow: 0 0 25px rgba(var(--theme-primary-color-rgb, 0,209,255), 0.3); position:relative; transform: scale(1.03); }
+    .popular-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--theme-primary-color); color: var(--background-color); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+
+    .neurovision-testimonials { position: relative; overflow: hidden; } /* For offset cards */
+    .neurovision-testimonial-card { padding: 1.5rem; }
+    .neurovision-testimonial-card .testimonial-avatar { border-radius: 50%; margin-bottom: 1rem; border: 3px solid var(--theme-primary-color); }
+    .neurovision-testimonial-card cite { display: block; margin-top: 1rem; font-weight: 500; color: var(--headings-color); }
+    .neurovision-testimonial-card.alt-offset { margin-top: 3rem; } /* Example offset */
+    .mt-lg-n5 { margin-top: -3rem !important; } /* Utility for overlapping */
+
+    .neurovision-code-block { background: rgba(0,0,0,0.5); color: #00E5A0; padding: 1.5rem; border-radius: 8px; font-family: "Space Grotesk", monospace; font-size: 0.9rem; white-space: pre-wrap; border: 1px solid rgba(0,229,160,0.3); }
+    .neurovision-final-cta { padding: 100px 0; background-attachment: fixed; /* Parallaxish */ }
+
+    /* Additional CSS for NeuroVision Enhancements */
+.neurovision-step-card { padding: 2rem 1.5rem; position: relative; margin-bottom: 1.5rem; }
+.neurovision-step-card .step-number {
+    position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+    background-color: var(--theme-primary-color); color: var(--background-color); /* Ensure contrast */
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 1.2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.neurovision-adv-feature-card { padding: 1.5rem; height: 100%; }
+.neurovision-adv-feature-card h5 { margin-top: 0.5rem; font-size: 1.1rem; color: var(--headings-color); }
+
+#neuroVisionStatsChart { max-height: 400px; }
+.stats-highlights li { margin-bottom: 0.75rem; font-size: 1.05rem; color: var(--text-color); } /* Use theme text color */
+.stats-highlights li i { color: var(--theme-primary-color); } /* Ensure icon uses theme primary */
+
+.neurovision-parallax-cta {
+    background-image: url('assets/ai-hero-background-abstract.jpg');
+    background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;
+    padding: 120px 0; position: relative;
+}
+.neurovision-parallax-cta::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(18, 26, 42, 0.8); /* Darker overlay for better contrast */
+}
+.neurovision-newsletter-form .form-control {
+    background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: #fff;
+    border-right: none; border-top-right-radius: 0; border-bottom-right-radius: 0;
+}
+.neurovision-newsletter-form .form-control::placeholder { color: rgba(255,255,255,0.6); }
+.neurovision-newsletter-form .btn { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+
+    @media (max-width: 768px) { /* Consolidate media queries if possible */
         .neurovision-timeline::before { left: 20px; }
         .timeline-item, .timeline-item.alt { width: 100%; padding-left: 70px; padding-right: 15px; }
         .timeline-item:not(.alt)::after, .timeline-item.alt::after { left: 10px; }
-        .timeline-item:not(.alt) .timeline-icon, .timeline-item.alt .timeline-icon { left: 0px; }
+        .timeline-item:not(.alt) .timeline-icon, .timeline-item.alt .timeline-icon { left: 0px; transform: translateX(0); /* Adjust icon position */ }
+        .neurovision-testimonial-card.alt-offset { margin-top: 1rem; }
+        .mt-lg-n5 { margin-top: 1rem !important; }
     }
 </style>
 </head>
@@ -229,7 +290,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <main id="pageMain" class="site-main">
 
 <section id="hero" class="d-flex align-items-center justify-content-center text-center" style="min-height: 100vh; position: relative; overflow: hidden; color: #fff;">
-    <!-- Three.js canvas will be injected here by JS -->
     <div id="neurovision-threejs-hero" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
     <div class="container position-relative" data-aos="fade-up">
         <h1 class="display-2 hero-headline-gradient">IMAGINE. CREATE.</h1>
@@ -239,17 +299,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </button>
     </div>
 </section>
-
 <section id="prompt-input-showcase" class="section">
     <div class="container">
         <div class="row mb-4">
             <div class="col-12 text-center">
-                <h2>Type Your Vision...</h2>
-                <input type="text" class="form-control form-control-lg neurovision-prompt-input" placeholder="e.g., A futuristic city skyline at sunset, cyberpunk style...">
+                <h2 data-aos="fade-up">Type Your Vision...</h2>
+                <input type="text" class="form-control form-control-lg neurovision-prompt-input" placeholder="e.g., A futuristic city skyline at sunset, cyberpunk style..." data-aos="fade-up" data-aos-delay="100">
             </div>
         </div>
-        <div id="neurovisionImageGrid" class="row g-3">
-            <!-- JS might populate this, or use placeholders -->
+        <div id="neurovisionImageGrid" class="row g-3" data-aos="fade-up" data-aos-delay="200">
             <div class="col-md-3 col-6"><img src="assets/placeholder-grid-1.jpg" class="img-fluid rounded" alt="Generated Art 1" width="300" height="300"></div>
             <div class="col-md-3 col-6"><img src="assets/placeholder-grid-2.jpg" class="img-fluid rounded" alt="Generated Art 2" width="300" height="300"></div>
             <div class="col-md-3 col-6"><img src="assets/placeholder-grid-3.jpg" class="img-fluid rounded" alt="Generated Art 3" width="300" height="300"></div>
@@ -257,13 +315,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
     </div>
 </section>
-
-<section id="features" class="section bg-light-variant"> <!-- Assuming a light variant for glassy -->
+<section id="how-it-works" class="section">
     <div class="container">
         <div class="text-center mb-5">
-            <h2>Unleash Creative Power</h2>
+            <h2 data-aos="fade-up">Transforming Ideas in 3 Simple Steps</h2>
         </div>
-        <!-- Vertical Timeline Layout -->
+        <div class="row text-center">
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="neurovision-step-card neurovision-glassy-card">
+                    <div class="step-number">1</div>
+                    <i class="fas fa-pencil-alt fa-2x mb-3 mt-3 text-primary-theme"></i>
+                    <h4>Describe Your Vision</h4>
+                    <p>Use natural language to type a detailed prompt of the image you want to create. Be as specific or abstract as you like!</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="neurovision-step-card neurovision-glassy-card">
+                    <div class="step-number">2</div>
+                    <i class="fas fa-cogs fa-2x mb-3 mt-3 text-primary-theme"></i>
+                    <h4>Choose Your Style</h4>
+                    <p>Select from a wide array of artistic styles, or let our AI suggest the best fit for your prompt.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="neurovision-step-card neurovision-glassy-card">
+                    <div class="step-number">3</div>
+                    <i class="fas fa-image fa-2x mb-3 mt-3 text-primary-theme"></i>
+                    <h4>Generate & Refine</h4>
+                    <p>Witness NeuroVision bring your idea to life in seconds! Iterate, upscale, or explore variations until it''s perfect.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="features" class="section bg-light-variant">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 data-aos="fade-up">Unleash Creative Power</h2>
+        </div>
         <div class="neurovision-timeline">
             <div class="timeline-item" data-aos="fade-right">
                 <div class="timeline-icon"><i class="fas fa-brain"></i></div>
@@ -289,9 +378,141 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
     </div>
 </section>
-<!-- Other sections: Style Palette, Pricing (slider), Testimonials (offset cards), API, Footer -->
-<!-- ... more unique HTML structure based on the plan ... -->
-<section class="section placeholder-section-temp"> <div class="container text-center"><p class="lead">[NeuroVision: Other unique sections like Style Palette, Pricing Slider, Offset Testimonials, API, etc. would be built here]</p></div></section>
+<section id="advanced-features" class="section bg-light-variant">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 data-aos="fade-up">Beyond Basic Generation</h2>
+            <p class="lead col-md-8 mx-auto" data-aos="fade-up" data-aos-delay="100">NeuroVision offers powerful tools for pro creators.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="neurovision-adv-feature-card text-center neurovision-glassy-card">
+                    <i class="fas fa-expand-arrows-alt fa-2x mb-3 text-primary-theme"></i>
+                    <h5>Image Upscaling</h5>
+                    <p class="small">Increase resolution of your generated images without losing quality.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="neurovision-adv-feature-card text-center neurovision-glassy-card">
+                    <i class="fas fa-minus-circle fa-2x mb-3 text-primary-theme"></i>
+                    <h5>Negative Prompts</h5>
+                    <p class="small">Specify what you *don''t* want to see in your image for finer control.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="neurovision-adv-feature-card text-center neurovision-glassy-card">
+                    <i class="fas fa-edit fa-2x mb-3 text-primary-theme"></i>
+                    <h5>Inpainting & Outpainting</h5>
+                    <p class="small">Edit specific parts of an image or expand its boundaries seamlessly.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="neurovision-adv-feature-card text-center neurovision-glassy-card">
+                    <i class="fas fa-layer-group fa-2x mb-3 text-primary-theme"></i>
+                    <h5>Seed Control</h5>
+                    <p class="small">Use specific seeds to reproduce or subtly vary your creations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="styles" class="section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 data-aos="fade-up">Explore Endless Artistic Styles</h2>
+            <p class="lead col-md-8 mx-auto" data-aos="fade-up" data-aos-delay="100">NeuroVision can generate images in a vast array of styles. Discover a few examples below. (More detailed descriptions per style can be added).</p>
+        </div>
+        <div class="row neurovision-style-palette" data-masonry='{"percentPosition": true }'>
+            <div class="col-sm-6 col-lg-4 mb-4"><div class="neurovision-style-card" data-aos="zoom-in-up"><img src="assets/style-photorealistic.jpg" alt="Photorealistic Style" class="img-fluid" width="400" height="300"><div class="style-card-caption">Photorealistic <span>Detailed, life-like imagery.</span></div></div></div>
+            <div class="col-sm-6 col-lg-4 mb-4"><div class="neurovision-style-card" data-aos="zoom-in-up" data-aos-delay="50"><img src="assets/style-anime.jpg" alt="Anime Style" class="img-fluid" width="400" height="400"><div class="style-card-caption">Anime / Manga <span>Vibrant Japanese animation style.</span></div></div></div>
+            <div class="col-sm-6 col-lg-4 mb-4"><div class="neurovision-style-card" data-aos="zoom-in-up" data-aos-delay="100"><img src="assets/style-abstract.jpg" alt="Abstract Art Style" class="img-fluid" width="400" height="500"><div class="style-card-caption">Abstract Art <span>Non-representational, conceptual visuals.</span></div></div></div>
+            <div class="col-sm-6 col-lg-4 mb-4"><div class="neurovision-style-card" data-aos="zoom-in-up" data-aos-delay="150"><img src="assets/style-fantasy.jpg" alt="Fantasy Art Style" class="img-fluid" width="400" height="350"><div class="style-card-caption">Fantasy Art <span>Mythical creatures and epic scenes.</span></div></div></div>
+            <div class="col-sm-6 col-lg-4 mb-4"><div class="neurovision-style-card" data-aos="zoom-in-up" data-aos-delay="200"><img src="assets/style-impressionist.jpg" alt="Impressionist Style" class="img-fluid" width="400" height="450"><div class="style-card-caption">Impressionist <span>Artistic brush strokes, focus on light.</span></div></div></div>
+            <div class="col-sm-6 col-lg-4 mb-4"><div class="neurovision-style-card" data-aos="zoom-in-up" data-aos-delay="250"><img src="assets/style-cyberpunk.jpg" alt="Cyberpunk Style" class="img-fluid" width="400" height="320"><div class="style-card-caption">Cyberpunk <span>Futuristic, neon-lit dystopia.</span></div></div></div>
+        </div>
+    </div>
+</section>
+<section id="stats" class="section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 data-aos="fade-up">NeuroVision by the Numbers</h2>
+            <p class="lead col-md-8 mx-auto" data-aos="fade-up" data-aos-delay="100">Join a rapidly growing community of creators.</p>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-7 mb-4 mb-lg-0" data-aos="fade-right">
+                <div class="neurovision-glassy-card p-4">
+                    <canvas id="neuroVisionStatsChart"></canvas>
+                </div>
+            </div>
+            <div class="col-lg-5" data-aos="fade-left" data-aos-delay="100">
+                <h3 class="mb-3">Powering Creativity Worldwide</h3>
+                <p>With millions of images generated and a vibrant community, NeuroVision is helping artists, designers, and innovators bring their visions to life like never before.</p>
+                <ul class="list-unstyled stats-highlights">
+                    <li><i class="fas fa-users me-2 text-primary-theme"></i>100,000+ Active Users (Example)</li>
+                    <li><i class="fas fa-images me-2 text-primary-theme"></i>5 Million+ Images Generated Monthly (Example)</li>
+                    <li><i class="fas fa-palette me-2 text-primary-theme"></i>1,000+ Unique Styles Supported (Example)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="pricing" class="section bg-light-variant">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 data-aos="fade-up">Choose Your Creative Tier</h2>
+            <p class="lead col-md-8 mx-auto" data-aos="fade-up" data-aos-delay="100">Flexible plans designed for every type of creator, from hobbyists to professionals. Each plan includes access to our powerful AI models and a growing library of styles.</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100"><div class="neurovision-pricing-card neurovision-glassy-card"><h4>Spark</h4><div class="price display-4 my-3">$9<small class="text-muted">/mo</small></div><ul class="list-unstyled"><li><i class="fas fa-check me-2 text-success"></i>50 Generations per month</li><li><i class="fas fa-check me-2 text-success"></i>Access to Standard Styles</li><li><i class="fas fa-check me-2 text-success"></i>Standard Resolution (e.g., 1024px)</li><li><i class="fas fa-times me-2 text-danger"></i>Limited Advanced Features</li><li><i class="fas fa-check me-2 text-success"></i>Community Support</li></ul><button class="btn btn-outline-light w-100 mt-auto">Get Started</button></div></div>
+            <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200"><div class="neurovision-pricing-card neurovision-glassy-card highlighted-plan"><div class="popular-badge">POPULAR</div><h4>Ignite</h4><div class="price display-3 my-3">$29<small class="text-muted">/mo</small></div><ul class="list-unstyled"><li><i class="fas fa-check me-2 text-success"></i>500 Generations per month</li><li><i class="fas fa-check me-2 text-success"></i>Access to All Standard & Premium Styles</li><li><i class="fas fa-check me-2 text-success"></i>High Resolution (Up to 2K)</li><li><i class="fas fa-check me-2 text-success"></i>Full Access to Advanced Features</li><li><i class="fas fa-check me-2 text-success"></i>Priority Email Support</li><li><i class="fas fa-check me-2 text-success"></i>Commercial Use License</li></ul><button class="btn btn-primary w-100 mt-auto neurovision-cta-hero">Choose Ignite</button></div></div>
+            <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300"><div class="neurovision-pricing-card neurovision-glassy-card"><h4>Fusion</h4><div class="price display-4 my-3">$79<small class="text-muted">/mo</small></div><ul class="list-unstyled"><li><i class="fas fa-check me-2 text-success"></i>Unlimited Generations*</li><li><i class="fas fa-check me-2 text-success"></i>All Styles + Early Access to Beta Styles</li><li><i class="fas fa-check me-2 text-success"></i>Maximum Resolution (4K+)</li><li><i class="fas fa-check me-2 text-success"></i>Full Advanced Features & API Access</li><li><i class="fas fa-check me-2 text-success"></i>Dedicated Support Channel</li><li><i class="fas fa-check me-2 text-success"></i>Team Collaboration Tools (Soon)</li></ul><button class="btn btn-outline-light w-100 mt-auto">Contact Sales</button></div></div>
+        </div>
+        <p class="text-center text-muted small mt-3" data-aos="fade-up">*Fair use policy applies for unlimited generations. Details in ToS.</p>
+    </div>
+</section>
+<section id="testimonials" class="section neurovision-testimonials">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 data-aos="fade-up">Loved by Creators Like You</h2>
+        </div>
+        <div class="row position-relative align-items-start"> <!-- align-items-start for masonry like behavior if cards have diff height -->
+            <div class="col-md-6 col-lg-5 offset-lg-1 mb-4" data-aos="fade-right"><div class="neurovision-testimonial-card neurovision-glassy-card"><img src="assets/avatar-placeholder-1.jpg" alt="User Avatar Alex P." class="testimonial-avatar" width="70" height="70"><p>"NeuroVision has completely transformed my creative workflow. The quality and speed are unmatched! I can generate dozens of concepts in the time it used to take for one."</p><cite>&mdash; Alex P., Digital Artist & Concept Designer</cite></div></div>
+            <div class="col-md-6 col-lg-5 offset-md-0 offset-lg-1 mb-4 mt-lg-5" data-aos="fade-left" data-aos-delay="100"><div class="neurovision-testimonial-card neurovision-glassy-card alt-offset"><img src="assets/avatar-placeholder-2.jpg" alt="User Avatar Sarah K." class="testimonial-avatar" width="70" height="70"><p>"The variety of styles and the intuitive interface make NeuroVision my go-to for all visual content for our marketing campaigns. Our engagement has skyrocketed!"</p><cite>&mdash; Sarah K., Marketing Lead @ Innovatech</cite></div></div>
+            <div class="col-md-6 col-lg-5 offset-lg-1 mb-4 mt-lg-n5" data-aos="fade-right" data-aos-delay="200"><div class="neurovision-testimonial-card neurovision-glassy-card"><img src="assets/avatar-placeholder-3.jpg" alt="User Avatar Jian L." class="testimonial-avatar" width="70" height="70"><p>"Finally, an AI image tool that understands artistic nuance. The results are simply breathtaking, and the API allowed us to integrate it into our app seamlessly."</p><cite>&mdash; Jian L., Lead Illustrator & App Developer</cite></div></div>
+        </div>
+    </div>
+</section>
+<section id="api" class="section"><div class="container text-center"><h2 data-aos="fade-up">Integrate the Magic</h2><p data-aos="fade-up" data-aos-delay="100">Seamlessly integrate NeuroVision into your workflows with our robust API.</p><pre data-aos="zoom-in" class="neurovision-code-block"><code>POST /v1/generate
+Authorization: Bearer YOUR_API_KEY
+{
+  "prompt": "A serene landscape at dawn, impressionist style",
+  "style_id": "impressionist_001",
+  "aspect_ratio": "16:9"
+}</code></pre></div></section>
+<section id="parallax-cta" class="section neurovision-parallax-cta text-white text-center d-flex align-items-center">
+    <div class="container position-relative" data-aos="fade-in" data-aos-duration="1000">
+        <h2 class="display-4 mb-4">Start Your Visual Journey Today</h2>
+        <p class="lead mb-5 col-md-8 mx-auto">Sign up for our newsletter to get the latest NeuroVision updates, tips, and exclusive offers directly to your inbox.</p>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <form id="neuroVisionNewsletterForm" class="neurovision-newsletter-form" data-parsley-validate>
+                    <div class="input-group input-group-lg mb-3">
+                        <input type="email" class="form-control" name="email_newsletter" placeholder="Enter your email address" required data-parsley-type="email">
+                        <button class="btn btn-primary neurovision-cta-hero" type="submit">Subscribe <i class="fas fa-paper-plane ms-1"></i></button>
+                    </div>
+                </form>
+                <div id="neuroVisionNewsletterFeedback" class="mt-2 small"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact" class="section neurovision-contact bg-light-variant">
+    <div class="container">
+        <div class="row justify-content-center"><div class="col-lg-8 text-center"><h2 data-aos="fade-up">Ready to Create?</h2><p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">Get started with NeuroVision today or reach out with any questions. Our team is here to help you unleash your creative potential.</p></div></div>
+        <div class="row justify-content-center"><div class="col-lg-7" data-aos="fade-up" data-aos-delay="200"><div class="neurovision-glassy-card p-4 p-md-5"><form id="neuroVisionLeadForm" data-parsley-validate><div class="mb-3"><label for="contactNameNeuro" class="form-label">Full Name</label><input type="text" class="form-control" id="contactNameNeuro" name="name" required data-parsley-minlength="3"></div><div class="mb-3"><label for="contactEmailNeuro" class="form-label">Email Address</label><input type="email" class="form-control" id="contactEmailNeuro" name="email" required data-parsley-type="email"></div><div class="mb-3"><label for="contactProjectNeuro" class="form-label">What do you want to create? (Optional)</label><textarea class="form-control" id="contactProjectNeuro" name="project" rows="3" data-parsley-maxlength="500"></textarea></div><div class="mb-3 form-check"><input type="checkbox" class="form-check-input" id="contactConsentNeuro" name="consent" required data-parsley-required-message="You must agree to the terms."><label class="form-check-label" for="contactConsentNeuro">I agree to the Privacy Policy and Terms of Service.</label></div><button type="submit" class="btn btn-primary w-100 neurovision-cta-hero"><i class="fas fa-paper-plane me-2"></i>Send Message & Start Free Trial</button></form><div id="neuroVisionFormFeedback" class="mt-3"></div></div></div></div>
+    </div>
+</section>
+<section id="final-cta" class="section text-center neurovision-final-cta" style="background: var(--background-image-css);"><div class="container" data-aos="fade-up"><h2 class="display-4 hero-headline-gradient">Start Creating Today!</h2><p class="lead my-4">Join thousands of creators pushing the boundaries of imagination with NeuroVision.</p><button class="btn btn-primary btn-lg neurovision-cta-hero" data-text="Sign Up Now - It''s Free!"><i class="fas fa-rocket me-2"></i>Sign Up Now - It''s Free!</button></div></section>
 
     </main>
 
@@ -303,48 +524,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
     </footer>
 
-    <!-- Template-Specific JavaScript - Add unique JS for this template here -->
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    // NeuroVision Three.js Hero
-    const heroDiv = document.getElementById("neurovision-threejs-hero");
-    if (heroDiv && typeof THREE !== "undefined") {
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, heroDiv.offsetWidth / heroDiv.offsetHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ alpha: true });
-        renderer.setSize(heroDiv.offsetWidth, heroDiv.offsetHeight);
-        heroDiv.appendChild(renderer.domElement);
-        const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
-        const material = new THREE.MeshStandardMaterial({ color: 0x00d1ff, wireframe: true, roughness: 0.1, metalness: 0.5 });
-        const torusKnot = new THREE.Mesh(geometry, material);
-        scene.add(torusKnot);
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); scene.add(ambientLight);
-        const pointLight = new THREE.PointLight(0xffffff, 1); pointLight.position.set(25, 50, 25); scene.add(pointLight);
-        camera.position.z = 30;
-        function animate() {
-            requestAnimationFrame(animate);
-            torusKnot.rotation.x += 0.005; torusKnot.rotation.y += 0.005;
-            renderer.render(scene, camera);
-        }
-        animate();
-        window.addEventListener("resize", () => {
-            if(heroDiv.offsetWidth > 0 && heroDiv.offsetHeight > 0) {
-                camera.aspect = heroDiv.offsetWidth / heroDiv.offsetHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(heroDiv.offsetWidth, heroDiv.offsetHeight);
-            }
-        });
-    } else { console.log("NeuroVision Three.js hero placeholder or THREE library not found."); }
 
-    if (typeof gsap !== "undefined") {
-        const cta = document.querySelector(".neurovision-cta-hero");
-        if(cta) {
-            cta.addEventListener("mouseenter", () => gsap.to(cta, {scale: 1.05, duration: 0.2, boxShadow: "0 0 25px rgba(255,255,255,0.5)"}));
-            cta.addEventListener("mouseleave", () => gsap.to(cta, {scale: 1, duration: 0.2, boxShadow: "0 0 15px rgba(255,255,255,0.3)"}));
-        }
-    }
-    // Update dynamic content specific to NeuroVision if any (already handled by prepare_skeleton)
-});
-</script>
 </body>
 </html>

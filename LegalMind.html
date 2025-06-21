@@ -90,9 +90,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script> -->
 
     <!-- Template-Specific Metadata - To be dynamically updated by JS in each final template -->
-    <!-- This script block will be copied into each new template and customized -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+
             const pageTitle = "LegalMind - AI-Powered Legal Advisory & Document Analysis";
             const pageDescription = "LegalMind offers intelligent legal insights, document analysis, and case law research, empowering legal professionals and individuals alike. Secure, accurate, and efficient.";
             const pageSlug = "legalmind";
@@ -121,7 +121,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               "url": `https://example.com/${pageSlug}`,
               "image": ogImage,
             };
-            // No specific schema additions for "Service" type in this example for LegalMind
+            if (schemaType === 'SoftwareApplication') {
+                schema.applicationCategory = 'MultimediaApplication';
+                schema.operatingSystem = 'Web';
+            }
 
             let oldSchemaScript = document.querySelector('script[type="application/ld+json"]');
             if (oldSchemaScript && oldSchemaScript.parentElement === document.head) {
@@ -145,24 +148,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         });
     </script>
 
-<style>
-    /* LegalMind Specific Styles - theme-elegant provides base vars */
-    body.theme-elegant { --theme-primary-color: #004085; --theme-secondary-color: #5a6268; background-color: #F8F9FA; }
-    .legalmind-hero { background-color: #FFFFFF; padding-top: 80px; padding-bottom: 80px; }
-    .legalmind-hero h1 { font-family: "Merriweather", serif; font-weight: 700; color: var(--headings-color); }
-    .legalmind-hero .lead { font-weight: 300; }
-    .bg-light-variant { background-color: #FFFFFF; }
-    .grayscale-logos img { filter: grayscale(100%); opacity: 0.6; transition: filter 0.3s ease, opacity 0.3s ease; }
-    .grayscale-logos img:hover { filter: grayscale(0%); opacity: 1; }
-    .legalmind-capabilities-list .list-group-item { border-radius: 0; border-left:0; border-right:0; border-top-width:0; padding: 1.5rem 1rem; transition: background-color 0.2s ease; }
-    .legalmind-capabilities-list .list-group-item:first-child { border-top-width: 1px; border-top-left-radius: 4px; border-top-right-radius: 4px;}
-    .legalmind-capabilities-list .list-group-item:last-child { border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;}
-    .legalmind-capabilities-list .list-group-item:hover { background-color: #f0f4f8; }
-    .legalmind-capabilities-list .list-group-item h5 { color: var(--headings-color); font-weight: 500; }
-    .legalmind-capabilities-list .list-group-item .fa-chevron-down { transition: transform 0.3s ease; }
-    .legalmind-capabilities-list .list-group-item[aria-expanded="true"] .fa-chevron-down { transform: rotate(180deg); }
-    .legalmind-capabilities-list .list-group-item .collapse { border-top: 1px solid #e9ecef; margin-top: 1rem; padding-top: 1rem; }
-</style>
+    <!-- Template-Specific CSS - Add unique styles for this template here -->
+    <style>
+        /* Base body styling will come from main.css via theme class */
+        /* Example: body { background-color: var(--background-color); color: var(--text-color); } */
+
+        /* Add highly unique structural or component CSS for THIS template below */
+        /* E.g., .unique-hero-layout { ... } */
+        /* E.g., .custom-card-design-for-template-X { ... } */
+    </style>
 </head>
 <body class="theme-elegant"> <!-- Placeholder theme, change for each template -->
 
@@ -198,76 +192,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Main Content: Each template will have its unique sections here -->
     <main id="pageMain" class="site-main">
 
-<section id="hero" class="section legalmind-hero">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-7" data-aos="fade-right">
-                <h1 class="display-3">AI-Driven Legal Intelligence. Unparalleled Clarity.</h1>
-                <p class="lead my-4">LegalMind empowers legal professionals with advanced AI tools for document analysis, case research, and compliance, delivering insights with precision and speed.</p>
-                <a href="#demo-form" class="btn btn-primary btn-lg me-2">Request a Demo</a>
-                <a href="#services" class="btn btn-outline-secondary btn-lg">Explore Services</a>
+        <!-- SECTION TEMPLATE START (Copy and customize for each section) -->
+        <!--
+        <section id="sectionName" class="section unique-section-class-for-this-template">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2>Section Title</h2>
+                        <p class="lead">Section subtitle or introductory text.</p>
+                    </div>
+                </div>
+                Add unique content, layout, components for this section
             </div>
-            <div class="col-lg-5 text-center" data-aos="fade-left" data-aos-delay="200">
-                <!-- Placeholder for animated graphic (LottieFile or SVG animation) -->
-                <img src="assets/legalmind-hero-graphic.svg" alt="LegalMind AI Network Graphic" class="img-fluid legalmind-hero-graphic" width="400" height="400">
-                 <!-- Comment: Replace with actual LottieFile embed or SVG animation -->
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
+        -->
+        <!-- SECTION TEMPLATE END -->
 
-<section id="trusted-by" class="section py-4 bg-light-variant"> <!-- Assuming .bg-light-variant for elegant -->
-    <div class="container">
-        <h5 class="text-center text-muted mb-4">TRUSTED BY LEADING LEGAL EXPERTS</h5>
-        <div class="d-flex flex-wrap justify-content-around align-items-center grayscale-logos">
-            <img src="assets/logo-placeholder-firm1.png" alt="Fictional Law Firm 1" width="120" height="50" class="mx-3 my-2">
-            <img src="assets/logo-placeholder-firm2.png" alt="Fictional Law Firm 2" width="120" height="50" class="mx-3 my-2">
-            <img src="assets/logo-placeholder-firm3.png" alt="Fictional Law Firm 3" width="120" height="50" class="mx-3 my-2">
-            <img src="assets/logo-placeholder-firm4.png" alt="Fictional Law Firm 4" width="120" height="50" class="mx-3 my-2">
-            <img src="assets/logo-placeholder-firm5.png" alt="Fictional Law Firm 5" width="120" height="50" class="mx-3 my-2">
-        </div>
-    </div>
-</section>
 
-<section id="capabilities" class="section">
-    <div class="container">
-        <div class="text-center mb-5"><h2 data-aos="fade-up">Core Capabilities</h2></div>
-        <div class="list-group legalmind-capabilities-list" id="capabilitiesList">
-            <!-- Item 1 -->
-            <a href="#capabilityDetail1" class="list-group-item list-group-item-action" data-bs-toggle="collapse" aria-expanded="false" aria-controls="capabilityDetail1" data-aos="fade-up">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"><i class="fas fa-file-alt me-2 text-primary-theme"></i>Document Analysis & Review</h5>
-                    <small><i class="fas fa-chevron-down"></i></small>
-                </div>
-                <div id="capabilityDetail1" class="collapse mt-2" data-bs-parent="#capabilitiesList">
-                    <p class="mb-1 small text-muted">Leverage AI to automatically scan, interpret, and summarize legal documents, identifying key clauses, risks, and relevant information in minutes, not hours.</p>
-                </div>
-            </a>
-            <!-- Item 2 -->
-            <a href="#capabilityDetail2" class="list-group-item list-group-item-action" data-bs-toggle="collapse" aria-expanded="false" aria-controls="capabilityDetail2" data-aos="fade-up" data-aos-delay="100">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"><i class="fas fa-gavel me-2 text-primary-theme"></i>Case Law & Precedent Research</h5>
-                    <small><i class="fas fa-chevron-down"></i></small>
-                </div>
-                <div id="capabilityDetail2" class="collapse mt-2" data-bs-parent="#capabilitiesList">
-                    <p class="mb-1 small text-muted">Access vast databases of case law and legal precedents. Our AI helps you find the most relevant information quickly, with semantic search capabilities.</p>
-                </div>
-            </a>
-            <!-- Item 3 -->
-            <a href="#capabilityDetail3" class="list-group-item list-group-item-action" data-bs-toggle="collapse" aria-expanded="false" aria-controls="capabilityDetail3" data-aos="fade-up" data-aos-delay="200">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"><i class="fas fa-shield-alt me-2 text-primary-theme"></i>Compliance & Risk Assessment</h5>
-                    <small><i class="fas fa-chevron-down"></i></small>
-                </div>
-                <div id="capabilityDetail3" class="collapse mt-2" data-bs-parent="#capabilitiesList">
-                    <p class="mb-1 small text-muted">Proactively identify potential compliance issues and assess risks within contracts or business practices using AI-driven analysis and regulatory knowledge bases.</p>
-                </div>
-            </a>
-        </div>
-    </div>
-</section>
-<!-- Case Study, Security (checklist), Pricing (columns), Demo Form, Footer -->
-<section class="section placeholder-section-temp"> <div class="container text-center"><p class="lead">[LegalMind: Other unique sections like Case Study Snippet, Security Checklist, Columnar Pricing, Demo Form, Footer would be built here]</p></div></section>
 
     </main>
 
@@ -281,10 +222,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- Template-Specific JavaScript - Add unique JS for this template here -->
     <script>
-document.addEventListener("DOMContentLoaded", function() {
-    // JS for LegalMind if any specific interactions are needed, e.g. for multi-step form
-    // Bootstrap collapse for capabilities list is handled by data attributes.
-});
-</script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update dynamic content placeholders (examples)
+            const currentYear = new Date().getFullYear();
+            if(document.getElementById('currentYearPlaceholder')) {
+                document.getElementById('currentYearPlaceholder').textContent = currentYear;
+            }
+            // Product name placeholders would be set by the generation script for each template.
+
+            // Initialize any template-specific JS components here
+            // E.g., if this template uses a unique slider or GSAP animation:
+            // if (typeof gsap !== 'undefined') { /* GSAP animation code */ }
+
+            // Example: Initialize Parsley on a specific form for this template
+            // if ($('#templateSpecificForm').length) {
+            //     $('#templateSpecificForm').parsley().on('form:submit', function() { ... });
+            // }
+        });
+    </script>
 </body>
 </html>
