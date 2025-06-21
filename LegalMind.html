@@ -90,75 +90,73 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script> -->
 
     <!-- Template-Specific Metadata - To be dynamically updated by JS in each final template -->
+    <!-- This script block will be copied into each new template and customized -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-
             const pageTitle = "LegalMind - AI-Powered Legal Advisory & Document Analysis";
             const pageDescription = "LegalMind offers intelligent legal insights, document analysis, and case law research, empowering legal professionals and individuals alike. Secure, accurate, and efficient.";
             const pageSlug = "legalmind";
             const ogImage = "assets/ai-og-legalmind-v2-default.jpg";
             const schemaType = "Service";
             const productName = "LegalMind";
-
             document.title = pageTitle;
             document.querySelector('meta[name="description"]').setAttribute("content", pageDescription);
             document.querySelector('link[rel="canonical"]').setAttribute("href", `https://example.com/${pageSlug}`);
-
             document.querySelector('meta[property="og:title"]').setAttribute("content", pageTitle);
             document.querySelector('meta[property="og:description"]').setAttribute("content", pageDescription);
             document.querySelector('meta[property="og:image"]').setAttribute("content", ogImage);
             document.querySelector('meta[property="og:url"]').setAttribute("content", `https://example.com/${pageSlug}`);
-
             document.querySelector('meta[name="twitter:title"]').setAttribute("content", pageTitle);
             document.querySelector('meta[name="twitter:description"]').setAttribute("content", pageDescription);
             document.querySelector('meta[name="twitter:image"]').setAttribute("content", ogImage);
-
-            const schema = {
-              "@context": "https://schema.org",
-              "@type": schemaType,
-              "name": productName,
-              "description": pageDescription,
-              "url": `https://example.com/${pageSlug}`,
-              "image": ogImage,
-            };
-            if (schemaType === 'SoftwareApplication') {
-                schema.applicationCategory = 'MultimediaApplication';
-                schema.operatingSystem = 'Web';
-            }
-
+            const schema = { "@context": "https://schema.org", "@type": schemaType, "name": productName, "description": pageDescription, "url": `https://example.com/${pageSlug}`, "image": ogImage };
+            if (schemaType === 'Service') { schema.serviceType = 'AI Legal Advisor'; }
             let oldSchemaScript = document.querySelector('script[type="application/ld+json"]');
             if (oldSchemaScript && oldSchemaScript.parentElement === document.head) {
                  oldSchemaScript.remove();
             }
-            const schemaScriptTag = document.createElement('script');
-            schemaScriptTag.type = 'application/ld+json';
-            schemaScriptTag.text = JSON.stringify(schema, null, 2);
-            document.head.appendChild(schemaScriptTag);
-
-            const currentYear = new Date().getFullYear();
-            if(document.getElementById('currentYearPlaceholder')) {
-                document.getElementById('currentYearPlaceholder').textContent = currentYear;
-            }
-            if(document.getElementById('productNamePlaceholder')) {
-                document.getElementById('productNamePlaceholder').textContent = productName;
-            }
-            if(document.getElementById('productNameFooterPlaceholder')) {
-                document.getElementById('productNameFooterPlaceholder').textContent = productName;
-            }
+            const schemaScriptTag = document.createElement('script'); schemaScriptTag.type = 'application/ld+json'; schemaScriptTag.text = JSON.stringify(schema, null, 2); document.head.appendChild(schemaScriptTag);
+            const currentYear = new Date().getFullYear(); if(document.getElementById('currentYearPlaceholder')) document.getElementById('currentYearPlaceholder').textContent = currentYear;
+            if(document.getElementById('productNamePlaceholder')) document.getElementById('productNamePlaceholder').textContent = productName;
+            if(document.getElementById('productNameFooterPlaceholder')) document.getElementById('productNameFooterPlaceholder').textContent = productName;
         });
     </script>
 
-    <!-- Template-Specific CSS - Add unique styles for this template here -->
-    <style>
-        /* Base body styling will come from main.css via theme class */
-        /* Example: body { background-color: var(--background-color); color: var(--text-color); } */
+<style>
+    body.theme-elegant { --theme-primary-color: #003366; --theme-primary-color-rgb: 0,51,102; --theme-secondary-color: #5a6268; background-color: #F8F9FA; font-size:16px; }
+    .legalmind-hero { background-color: #FFFFFF; padding-top: 80px; padding-bottom: 80px; border-bottom: 1px solid #e9ecef; }
+    .legalmind-hero h1 { font-family: "Merriweather", serif; font-weight: 700; color: var(--headings-color); line-height:1.3; }
+    .legalmind-hero .lead { font-weight: 300; font-size:1.15rem; }
+    .legalmind-hero-graphic { max-width: 100%; opacity:0.9; }
+    .bg-light-alt { background-color: #FFFFFF; }
+    .grayscale-logos img { filter: grayscale(100%); opacity: 0.65; transition: filter 0.3s ease, opacity 0.3s ease; aspect-ratio: 3/1; object-fit: contain;}
+    .grayscale-logos img:hover { filter: grayscale(0%); opacity: 1; }
+    .legalmind-capabilities-list .list-group-item { border-radius: 0; border-left:0; border-right:0; border-top-width:0; padding: 1.5rem 1rem; background-color:transparent; transition: background-color 0.2s ease; }
+    .legalmind-capabilities-list .list-group-item:first-child { border-top: 1px solid #e9ecef; border-top-left-radius: 6px; border-top-right-radius: 6px;}
+    .legalmind-capabilities-list .list-group-item:last-child { border-bottom-left-radius: 6px; border-bottom-right-radius: 6px;}
+    .legalmind-capabilities-list .list-group-item a { text-decoration:none; color: var(--headings-color); }
+    .legalmind-capabilities-list .list-group-item:hover { background-color: #f0f4f8; }
+    .legalmind-capabilities-list .list-group-item h5 { color: var(--headings-color); font-weight: 500; font-size:1.1rem; }
+    .legalmind-capabilities-list .list-group-item .fa-chevron-down { transition: transform 0.3s ease; }
+    .legalmind-capabilities-list .list-group-item a[aria-expanded="true"] .fa-chevron-down { transform: rotate(180deg); }
+    .legalmind-capabilities-list .list-group-item .collapse { border-top: 1px solid #e9ecef; margin-top: 1rem; padding-top: 1rem; }
+    .legalmind-checklist li { padding-left: 1.5em; position: relative; margin-bottom: 0.75rem; }
+    .legalmind-checklist li i.fas { position: absolute; left: 0; top: 0.25em; color: var(--theme-primary-color); }
+    .legalmind-pricing-table .table { border: 1px solid #dee2e6; }
+    .legalmind-pricing-table th { background-color: #f8f9fa; font-weight: 500; }
+    .legalmind-pricing-table .price { font-weight: 600; }
+    .legalmind-pricing-table .price small { font-size:0.6em; font-weight:400; }
+    .legalmind-form-card { background-color: #fff; padding: 2.5rem; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); border: 1px solid #e9ecef; }
+    .legalmind-blog-card { background-color:#fff; border: 1px solid #e9ecef; border-radius:6px; height:100%; display:flex; flex-direction:column; }
+    .legalmind-blog-card .card-img-top { border-top-left-radius:5px; border-top-right-radius:5px; aspect-ratio: 16/10; object-fit:cover; }
+    .legalmind-blog-card .card-body { flex-grow:1; display:flex; flex-direction:column; }
+    .legalmind-blog-card .card-title { font-size:1.1rem; font-weight:600; margin-bottom:0.5rem; }
+    .legalmind-blog-card .card-text { flex-grow:1; }
+    .legalmind-blog-card .btn-link { font-size:0.9rem; font-weight:500; }
+</style>
 
-        /* Add highly unique structural or component CSS for THIS template below */
-        /* E.g., .unique-hero-layout { ... } */
-        /* E.g., .custom-card-design-for-template-X { ... } */
-    </style>
 </head>
-<body class="theme-elegant"> <!-- Placeholder theme, change for each template -->
+<body class="theme-elegant">
 
     <!-- Google Tag Manager (noscript) Placeholder - from common_head.html if not already there -->
     <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
@@ -192,23 +190,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Main Content: Each template will have its unique sections here -->
     <main id="pageMain" class="site-main">
 
-        <!-- SECTION TEMPLATE START (Copy and customize for each section) -->
-        <!--
-        <section id="sectionName" class="section unique-section-class-for-this-template">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <h2>Section Title</h2>
-                        <p class="lead">Section subtitle or introductory text.</p>
-                    </div>
-                </div>
-                Add unique content, layout, components for this section
+<section id="hero" class="section legalmind-hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 mb-5 mb-lg-0" data-aos="fade-right">
+                <h1 class="display-3">AI-Driven Legal Intelligence. Unparalleled Clarity.</h1>
+                <p class="lead my-4">LegalMind empowers legal professionals with advanced AI tools for document analysis, case research, and compliance, delivering insights with precision and speed.</p>
+                <a href="#demo-form" class="btn btn-primary btn-lg me-2 rounded-pill">Request a Demo</a>
+                <a href="#capabilities" class="btn btn-outline-secondary btn-lg rounded-pill">Explore Capabilities</a>
             </div>
-        </section>
-        -->
-        <!-- SECTION TEMPLATE END -->
-
-
+            <div class="col-lg-5 text-center" data-aos="fade-left" data-aos-delay="200">
+                <img src="assets/legalmind-hero-graphic.svg" alt="LegalMind AI Network Graphic" class="img-fluid legalmind-hero-graphic" width="450" height="450">
+            </div>
+        </div>
+    </div>
+</section>
+<section id="trusted-by" class="section py-5 bg-light-alt"> <div class="container"> <h5 class="text-center text-muted mb-4" data-aos="fade-up">TRUSTED BY LEADING LEGAL DEPARTMENTS & FIRMS</h5> <div class="d-flex flex-wrap justify-content-around align-items-center grayscale-logos" data-aos="fade-up" data-aos-delay="100"> <img src="assets/logo-placeholder-firm1.png" alt="Fictional Law Firm 1" width="130" height="55" class="mx-3 my-2" title="Global Legal LLP"> <img src="assets/logo-placeholder-firm2.png" alt="Fictional Law Firm 2" width="130" height="55" class="mx-3 my-2" title="Innovate Counsel"> <img src="assets/logo-placeholder-firm3.png" alt="Fictional Law Firm 3" width="130" height="55" class="mx-3 my-2" title="Justice Tech Inc."> <img src="assets/logo-placeholder-firm4.png" alt="Fictional Law Firm 4" width="130" height="55" class="mx-3 my-2" title="Enterprise Legal Solutions"> <img src="assets/logo-placeholder-firm5.png" alt="Fictional Law Firm 5" width="130" height="55" class="mx-3 my-2" title="Alpha & Omega Law"> </div> </div> </section>
+<section id="capabilities" class="section"> <div class="container"> <div class="text-center mb-5"><h2 data-aos="fade-up">Core Capabilities of LegalMind</h2> <p class="lead col-md-8 mx-auto" data-aos="fade-up" data-aos-delay="100">Streamline your legal workflows with our AI-powered platform.</p></div> <div class="list-group list-group-flush legalmind-capabilities-list" id="capabilitiesList"> <div class="list-group-item" data-aos="fade-up"><a class="d-flex w-100 justify-content-between align-items-center" data-bs-toggle="collapse" href="#capDetail1" role="button" aria-expanded="false" aria-controls="capDetail1"><h5 class="mb-0"><i class="fas fa-file-alt me-3 fa-fw text-primary-theme"></i>AI Document Analysis & Review</h5><i class="fas fa-chevron-down text-muted"></i></a><div class="collapse pt-2" id="capDetail1" data-bs-parent="#capabilitiesList"><p class="mb-1 small text-muted">Automatically scan, interpret, and summarize lengthy legal documents. Identify key clauses, extract critical data points, assess risks, and ensure consistency in minutes, not hours. Supports contracts, pleadings, discovery documents, and more.</p></div></div> <div class="list-group-item" data-aos="fade-up" data-aos-delay="50"><a class="d-flex w-100 justify-content-between align-items-center" data-bs-toggle="collapse" href="#capDetail2" role="button" aria-expanded="false" aria-controls="capDetail2"><h5 class="mb-0"><i class="fas fa-gavel me-3 fa-fw text-primary-theme"></i>Intelligent Case Law Research</h5><i class="fas fa-chevron-down text-muted"></i></a><div class="collapse pt-2" id="capDetail2" data-bs-parent="#capabilitiesList"><p class="mb-1 small text-muted">Access vast databases of case law, statutes, and legal precedents. Our AI helps you find the most relevant information quickly using natural language queries and semantic search, uncovering insights you might otherwise miss.</p></div></div> <div class="list-group-item" data-aos="fade-up" data-aos-delay="100"><a class="d-flex w-100 justify-content-between align-items-center" data-bs-toggle="collapse" href="#capDetail3" role="button" aria-expanded="false" aria-controls="capDetail3"><h5 class="mb-0"><i class="fas fa-shield-alt me-3 fa-fw text-primary-theme"></i>Compliance & Risk Assessment</h5><i class="fas fa-chevron-down text-muted"></i></a><div class="collapse pt-2" id="capDetail3" data-bs-parent="#capabilitiesList"><p class="mb-1 small text-muted">Proactively identify potential compliance issues and assess risks within contracts or business practices. LegalMind cross-references documents against relevant regulations and internal policies, flagging potential concerns.</p></div></div> <div class="list-group-item" data-aos="fade-up" data-aos-delay="150"><a class="d-flex w-100 justify-content-between align-items-center" data-bs-toggle="collapse" href="#capDetail4" role="button" aria-expanded="false" aria-controls="capDetail4"><h5 class="mb-0"><i class="fas fa-cogs me-3 fa-fw text-primary-theme"></i>Automated Legal Drafting</h5><i class="fas fa-chevron-down text-muted"></i></a><div class="collapse pt-2" id="capDetail4" data-bs-parent="#capabilitiesList"><p class="mb-1 small text-muted">Generate initial drafts of common legal documents (NDAs, service agreements, etc.) based on your custom templates and specific parameters. Reduce drafting time and ensure consistency. (Beta Feature)</p></div></div> </div> </div> </section>
+<section id="case-study" class="section bg-light-alt"> <div class="container"> <div class="text-center mb-5"><h2 data-aos="fade-up">Proven Results: A Case Study</h2></div> <div class="row align-items-center"> <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right"> <img src="assets/legalmind-case-study.jpg" alt="LegalMind Case Study Visual" class="img-fluid rounded shadow-sm" width="450" height="350"> </div> <div class="col-lg-7" data-aos="fade-left" data-aos-delay="100"> <h4>Global Corp LLP Reduced Document Review Time by 70%</h4> <p class="text-muted">Global Corp LLP, a multinational law firm, implemented LegalMind to streamline their M&A due diligence process. By leveraging our AI Document Analysis, they were able to reduce average document review time per case from 150 hours to just 45 hours.</p> <ul class="list-unstyled"> <li><i class="fas fa-check-circle text-primary-theme me-2"></i>70% reduction in manual review time.</li> <li><i class="fas fa-check-circle text-primary-theme me-2"></i>Identification of 30% more critical risk factors.</li> <li><i class="fas fa-check-circle text-primary-theme me-2"></i>Significant cost savings and improved team morale.</li> </ul> <a href="#contact" class="btn btn-link text-primary-theme ps-0">Read Full Case Study (Placeholder) <i class="fas fa-arrow-right ms-1 small"></i></a> </div> </div> </div> </section>
+<section id="security" class="section"> <div class="container"> <div class="row align-items-center"> <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right"> <h2>Enterprise-Grade Security & Compliance</h2> <p class="lead">We understand the sensitivity of legal data. LegalMind is built on a foundation of robust security protocols and designed to meet stringent compliance standards.</p> <ul class="list-unstyled legalmind-checklist mt-4"> <li><i class="fas fa-lock me-2"></i>End-to-End Data Encryption (AES-256).</li> <li><i class="fas fa-server me-2"></i>Secure, ISO 27001 Certified Data Centers.</li> <li><i class="fas fa-user-shield me-2"></i>Role-Based Access Control & Audit Logs.</li> <li><i class="fas fa-clipboard-check me-2"></i>GDPR & CCPA Ready Platform.</li> <li><i class="fas fa-history me-2"></i>Regular Security Audits & Penetration Testing.</li> </ul> </div> <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-delay="100"> <img src="assets/legalmind-security-graphic.svg" alt="Security Badges and Icons" class="img-fluid" width="350" height="350"> </div> </div> </div> </section>
+<section id="pricing-table" class="section bg-light-alt"> <div class="container"> <div class="text-center mb-5"><h2 data-aos="fade-up">Transparent Pricing for Legal Professionals</h2> <p class="lead col-md-8 mx-auto" data-aos="fade-up" data-aos-delay="100">Choose a plan that scales with your needs. No hidden fees, cancel anytime.</p></div> <div class="table-responsive legalmind-pricing-table" data-aos="fade-up" data-aos-delay="150"> <table class="table table-hover text-center"> <thead> <tr> <th style="width: 34%;">Feature</th> <th style="width: 22%;">Solo Practitioner</th> <th style="width: 22%;">Small Firm</th> <th style="width: 22%;">Enterprise</th> </tr> </thead> <tbody> <tr><td>AI Document Analysis</td><td>100 docs/mo</td><td>500 docs/mo</td><td>Unlimited</td></tr> <tr><td>Case Law Research</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr> <tr><td>Compliance Check</td><td>Basic</td><td>Advanced</td><td>Custom Modules</td></tr> <tr><td>Users Included</td><td>1</td><td>Up to 5</td><td>Custom</td></tr> <tr><td>Secure Cloud Storage</td><td>10 GB</td><td>50 GB</td><td>Unlimited</td></tr> <tr><td>Support</td><td>Email</td><td>Priority Email</td><td>Dedicated Manager</td></tr> </tbody> <tfoot> <tr> <td></td> <td><div class="price h4 mb-0">$99<small>/mo</small></div><button class="btn btn-outline-primary mt-2 btn-sm">Get Started</button></td> <td><div class="price h3 mb-0 text-primary-theme">$249<small>/mo</small></div><button class="btn btn-primary mt-2 btn-sm">Choose Plan</button></td> <td><div class="price h4 mb-0">Custom</div><button class="btn btn-outline-primary mt-2 btn-sm">Contact Sales</button></td> </tr> </tfoot> </table> </div> </div> </section>
+<section id="demo-form" class="section"> <div class="container"> <div class="row justify-content-center"> <div class="col-lg-8 text-center"> <h2 data-aos="fade-up">See LegalMind in Action</h2> <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">Request a personalized demo to see how LegalMind can revolutionize your legal practice.</p> </div> </div> <div class="row justify-content-center"> <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200"> <div class="legalmind-form-card"> <form id="legalMindDemoForm" data-parsley-validate> <div class="mb-3"><label for="contactNameLegal" class="form-label">Full Name</label><input type="text" class="form-control" id="contactNameLegal" name="name" required></div> <div class="mb-3"><label for="contactEmailLegal" class="form-label">Work Email</label><input type="email" class="form-control" id="contactEmailLegal" name="email" required data-parsley-type="email"></div> <div class="mb-3"><label for="contactCompanyLegal" class="form-label">Firm/Company Name</label><input type="text" class="form-control" id="contactCompanyLegal" name="company"></div> <div class="mb-3"><label for="contactSizeLegal" class="form-label">Number of Users (Estimate)</label><input type="number" class="form-control" id="contactSizeLegal" name="users" data-parsley-type="integer"></div> <div class="mb-3"><label for="contactNeedsLegal" class="form-label">Specific Interests (Optional)</label><textarea class="form-control" id="contactNeedsLegal" name="needs" rows="3"></textarea></div> <button type="submit" class="btn btn-primary w-100 btn-lg">Request Demo</button> </form> <div id="legalMindFormFeedback" class="mt-3"></div> </div> </div> </div> </div> </section>
+<section id="blog-snippets" class="section bg-light-alt"> <div class="container"> <div class="text-center mb-5"><h2 data-aos="fade-up">Latest Insights from LegalMind</h2></div> <div class="row"> <div class="col-md-4 mb-4" data-aos="fade-up"><div class="legalmind-blog-card"><img src="assets/blog-placeholder1.jpg" alt="Blog post 1 image" class="img-fluid card-img-top" width="400" height="250"><div class="card-body"><h5 class="card-title">The Future of AI in Legal Tech</h5><p class="card-text small text-muted">Explore how AI is reshaping the legal landscape and what it means for your practice...</p><a href="#" class="btn btn-link ps-0">Read More <i class="fas fa-arrow-right small"></i></a></div></div></div> <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100"><div class="legalmind-blog-card"><img src="assets/blog-placeholder2.jpg" alt="Blog post 2 image" class="img-fluid card-img-top" width="400" height="250"><div class="card-body"><h5 class="card-title">Navigating Data Privacy with AI</h5><p class="card-text small text-muted">Best practices for ensuring data privacy and compliance when using AI tools in legal work...</p><a href="#" class="btn btn-link ps-0">Read More <i class="fas fa-arrow-right small"></i></a></div></div></div> <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200"><div class="legalmind-blog-card"><img src="assets/blog-placeholder3.jpg" alt="Blog post 3 image" class="img-fluid card-img-top" width="400" height="250"><div class="card-body"><h5 class="card-title">Boosting Efficiency: AI for Due Diligence</h5><p class="card-text small text-muted">Learn how LegalMind's AI can drastically reduce time spent on due diligence tasks...</p><a href="#" class="btn btn-link ps-0">Read More <i class="fas fa-arrow-right small"></i></a></div></div></div> </div> </div> </section>
 
     </main>
 
@@ -220,25 +223,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
     </footer>
 
-    <!-- Template-Specific JavaScript - Add unique JS for this template here -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Update dynamic content placeholders (examples)
-            const currentYear = new Date().getFullYear();
-            if(document.getElementById('currentYearPlaceholder')) {
-                document.getElementById('currentYearPlaceholder').textContent = currentYear;
-            }
-            // Product name placeholders would be set by the generation script for each template.
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    if (typeof $ !== "undefined" && typeof $.fn.parsley !== "undefined") {
+        const demoForm = $("#legalMindDemoForm");
+        if (demoForm.length) {
+            demoForm.parsley().on("form:submit", function() {
+                $("#legalMindFormFeedback").html("<div class=\"alert alert-success\">Thank you! Your demo request has been submitted. We will contact you shortly.</div>");
+                demoForm.trigger("reset");
+                return false;
+            }).on("form:error", function() {
+                $("#legalMindFormFeedback").html("<div class=\"alert alert-danger\">Please correct the errors in the form.</div>");
+            });
+        }
+    }
+});
+</script>
 
-            // Initialize any template-specific JS components here
-            // E.g., if this template uses a unique slider or GSAP animation:
-            // if (typeof gsap !== 'undefined') { /* GSAP animation code */ }
-
-            // Example: Initialize Parsley on a specific form for this template
-            // if ($('#templateSpecificForm').length) {
-            //     $('#templateSpecificForm').parsley().on('form:submit', function() { ... });
-            // }
-        });
-    </script>
 </body>
 </html>

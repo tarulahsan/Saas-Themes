@@ -151,27 +151,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <style>
     /* NeuroVision Specific Styles - theme-glassy provides base variables */
-    body.theme-glassy { --theme-primary-color: #00d1ff; --theme-secondary-color: #8A2BE2; /* BlueViolet */ } /* padding-top is handled by main.css for theme-glassy */
+    body.theme-glassy { --theme-primary-color: #00d1ff; --theme-primary-color-rgb: 0,209,255; --theme-secondary-color: #8A2BE2; --theme-secondary-color-rgb: 138,43,226; padding-top: 70px; }
     .hero-headline-gradient {
         background: linear-gradient(45deg, var(--theme-primary-color), var(--theme-secondary-color), #FF00E5);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent;
         font-weight: 800;
     }
-    .neurovision-cta-hero { /* CTA style for hero and pricing */
+    .neurovision-cta-hero {
         background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
         border: 1px solid rgba(255,255,255,0.3); color: #fff;
         padding: 15px 35px; border-radius: 50px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.5px;
     }
     .neurovision-cta-hero:hover { background: rgba(255,255,255,0.2); box-shadow: 0 0 15px rgba(255,255,255,0.3); transform: translateY(-2px); }
-
     .neurovision-prompt-input { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 0.75rem 1.25rem; border-radius: 10px; }
     .neurovision-prompt-input::placeholder { color: rgba(255,255,255,0.5); }
     #neurovisionImageGrid img { transition: transform 0.3s ease, opacity 0.3s ease; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
     #neurovisionImageGrid img:hover { transform: scale(1.05); opacity: 0.8; }
-
     .neurovision-timeline { position: relative; padding: 20px 0; }
     .neurovision-timeline::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: rgba(255,255,255,0.1); margin-left: -2px; border-radius: 2px; }
     .timeline-item { position: relative; margin-bottom: 50px; width: 50%; padding: 10px 40px; box-sizing: border-box; }
@@ -184,74 +179,97 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .neurovision-glassy-card {
         background: rgba(var(--bs-body-color-rgb, 255,255,255), 0.05); backdrop-filter: blur(15px) saturate(120%);
         border: 1px solid rgba(var(--bs-body-color-rgb, 255,255,255), 0.1); border-radius: 15px; padding: 20px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        display: flex; flex-direction: column; height: 100%;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2), inset 0 0 5px rgba(var(--bs-body-color-rgb,255,255,255),0.05); /* Added inner shadow */
     }
     .bg-light-variant { background-color: rgba(var(--bs-body-color-rgb, 255,255,255), 0.02); }
-
     .neurovision-style-palette .neurovision-style-card { position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-    .neurovision-style-palette .neurovision-style-card img { display: block; transition: transform 0.3s ease; }
+    .neurovision-style-palette .neurovision-style-card img { display: block; transition: transform 0.3s ease; width:100%; }
     .neurovision-style-palette .neurovision-style-card:hover img { transform: scale(1.1); }
-    .neurovision-style-palette .style-card-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.7); color: #fff; padding: 8px; text-align: center; font-size: 0.9rem; transition: opacity 0.3s ease; opacity: 0; }
+    .neurovision-style-palette .style-card-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); color: #fff; padding: 10px; text-align: center; font-size: 0.9rem; transition: opacity 0.3s ease; opacity: 0; }
+    .neurovision-style-palette .style-card-caption span { display:block; font-size: 0.75rem; opacity:0.8; }
     .neurovision-style-palette .neurovision-style-card:hover .style-card-caption { opacity: 1; }
-
-    .neurovision-pricing-card { padding: 2rem 1.5rem; display: flex; flex-direction: column; height: 100%; }
+    .neurovision-pricing-card { padding: 2rem 1.5rem; }
     .neurovision-pricing-card h4 { font-size: 1.3rem; font-weight: 600; color: var(--headings-color); margin-bottom: 1rem; }
     .neurovision-pricing-card .price { color: var(--theme-primary-color); font-weight: 700; }
     .neurovision-pricing-card .price small { font-size: 0.5em; color: var(--text-color); }
-    .neurovision-pricing-card ul { margin: 1.5rem 0; padding-left: 0; list-style:none; } /* Ensure no bullets */
-    .neurovision-pricing-card ul li { margin-bottom: 0.5rem; }
-    .neurovision-pricing-card.highlighted-plan { border-color: var(--theme-primary-color); box-shadow: 0 0 25px rgba(var(--theme-primary-color-rgb, 0,209,255), 0.3); position:relative; transform: scale(1.03); }
+    .neurovision-pricing-card ul { margin: 1.5rem 0; padding-left: 0; list-style:none; }
+    .neurovision-pricing-card ul li { margin-bottom: 0.75rem; display:flex; align-items:flex-start; }
+    .neurovision-pricing-card ul li .fas { margin-right: 0.5rem; margin-top: 0.2rem; width: 1em; }
+    .neurovision-pricing-card.highlighted-plan {
+        border: 2px solid transparent; background-clip: padding-box;
+        border-image: linear-gradient(45deg, var(--theme-primary-color), var(--theme-secondary-color)) 1;
+        animation: neurovision-breathing-border 3s ease-in-out infinite alternate;
+        position:relative; transform: scale(1.03);
+    }
+    @keyframes neurovision-breathing-border {
+        from { box-shadow: 0 0 15px rgba(var(--theme-primary-color-rgb), 0.2); }
+        to { box-shadow: 0 0 30px rgba(var(--theme-secondary-color-rgb), 0.5); }
+    }
     .popular-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--theme-primary-color); color: var(--background-color); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
-
-    .neurovision-testimonials { position: relative; overflow: hidden; } /* For offset cards */
-    .neurovision-testimonial-card { padding: 1.5rem; }
+    .neurovision-testimonials { position: relative; overflow: hidden; }
+    .neurovision-testimonial-card { padding: 1.5rem; margin-bottom: 1rem; }
     .neurovision-testimonial-card .testimonial-avatar { border-radius: 50%; margin-bottom: 1rem; border: 3px solid var(--theme-primary-color); }
     .neurovision-testimonial-card cite { display: block; margin-top: 1rem; font-weight: 500; color: var(--headings-color); }
-    .neurovision-testimonial-card.alt-offset { margin-top: 3rem; } /* Example offset */
-    .mt-lg-n5 { margin-top: -3rem !important; } /* Utility for overlapping */
+    .neurovision-testimonial-card.alt-offset { margin-top: 3rem; }
+    .mt-lg-n5 { margin-top: -3rem !important; }
+    .neurovision-code-block { background: rgba(0,0,0,0.7); color: #00E5A0; padding: 1.5rem; border-radius: 8px; font-family: "Space Grotesk", monospace; font-size: 0.9rem; white-space: pre-wrap; border: 1px solid rgba(0,229,160,0.3); box-shadow: inset 0 0 10px rgba(0,0,0,0.3); }
+    .neurovision-final-cta { padding: 100px 0; background-attachment: fixed; }
+    .neurovision-step-card { padding: 2rem 1.5rem; position: relative; margin-bottom: 1.5rem; }
+    .neurovision-step-card .step-number {
+        position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+        background-color: var(--theme-primary-color); color: var(--background-color);
+        width: 40px; height: 40px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-weight: bold; font-size: 1.2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .neurovision-adv-feature-card { padding: 1.5rem; height: 100%; }
+    .neurovision-adv-feature-card h5 { margin-top: 0.5rem; font-size: 1.1rem; color: var(--headings-color); }
+    #neuroVisionStatsChart { max-height: 400px; }
+    .stats-highlights li { margin-bottom: 0.75rem; font-size: 1.05rem; }
+    .neurovision-parallax-cta {
+        background-image: url('assets/ai-hero-background-abstract.jpg');
+        background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;
+        padding: 120px 0; position: relative;
+    }
+    .neurovision-parallax-cta::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+        background-color: rgba(18, 26, 42, 0.7);
+    }
+    .neurovision-newsletter-form .form-control {
+        background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: #fff;
+        border-right: none; border-top-right-radius: 0; border-bottom-right-radius: 0;
+    }
+    .neurovision-newsletter-form .form-control::placeholder { color: rgba(255,255,255,0.6); }
+    .neurovision-newsletter-form .btn { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+    /* Fine-tuning additions */
+    .section { /* This might already exist, ensure values are consistent */
+        padding-top: var(--section-padding-y, 80px);
+        padding-bottom: var(--section-padding-y, 80px);
+    }
+    .section:not(#hero):not(.neurovision-parallax-cta) { border-top: 1px solid rgba(var(--bs-body-color-rgb, 255,255,255), 0.07); }
+    .site-footer.footer { padding-top: 3rem; padding-bottom: 3rem; }
+    .neurovision-social-links { margin-top: 1rem; margin-bottom: 1rem; text-align: center; }
+    .neurovision-social-links a { color: var(--text-color); font-size: 1.5rem; margin: 0 0.75rem; transition: color 0.2s ease, transform 0.2s ease; display: inline-block; }
+    .neurovision-social-links a:hover { color: var(--theme-primary-color); transform: scale(1.2); }
 
-    .neurovision-code-block { background: rgba(0,0,0,0.5); color: #00E5A0; padding: 1.5rem; border-radius: 8px; font-family: "Space Grotesk", monospace; font-size: 0.9rem; white-space: pre-wrap; border: 1px solid rgba(0,229,160,0.3); }
-    .neurovision-final-cta { padding: 100px 0; background-attachment: fixed; /* Parallaxish */ }
-
-    /* Additional CSS for NeuroVision Enhancements */
-.neurovision-step-card { padding: 2rem 1.5rem; position: relative; margin-bottom: 1.5rem; }
-.neurovision-step-card .step-number {
-    position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
-    background-color: var(--theme-primary-color); color: var(--background-color); /* Ensure contrast */
-    width: 40px; height: 40px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: bold; font-size: 1.2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-.neurovision-adv-feature-card { padding: 1.5rem; height: 100%; }
-.neurovision-adv-feature-card h5 { margin-top: 0.5rem; font-size: 1.1rem; color: var(--headings-color); }
-
-#neuroVisionStatsChart { max-height: 400px; }
-.stats-highlights li { margin-bottom: 0.75rem; font-size: 1.05rem; color: var(--text-color); } /* Use theme text color */
-.stats-highlights li i { color: var(--theme-primary-color); } /* Ensure icon uses theme primary */
-
-.neurovision-parallax-cta {
-    background-image: url('assets/ai-hero-background-abstract.jpg');
-    background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;
-    padding: 120px 0; position: relative;
-}
-.neurovision-parallax-cta::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(18, 26, 42, 0.8); /* Darker overlay for better contrast */
-}
-.neurovision-newsletter-form .form-control {
-    background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: #fff;
-    border-right: none; border-top-right-radius: 0; border-bottom-right-radius: 0;
-}
-.neurovision-newsletter-form .form-control::placeholder { color: rgba(255,255,255,0.6); }
-.neurovision-newsletter-form .btn { border-top-left-radius: 0; border-bottom-left-radius: 0; }
-
-    @media (max-width: 768px) { /* Consolidate media queries if possible */
+    @media (max-width: 991px) {
+        .neurovision-testimonial-card.alt-offset { margin-top: 1rem; }
+        .mt-lg-n5 { margin-top: 1rem !important; }
+    }
+    @media (max-width: 768px) {
         .neurovision-timeline::before { left: 20px; }
         .timeline-item, .timeline-item.alt { width: 100%; padding-left: 70px; padding-right: 15px; }
         .timeline-item:not(.alt)::after, .timeline-item.alt::after { left: 10px; }
-        .timeline-item:not(.alt) .timeline-icon, .timeline-item.alt .timeline-icon { left: 0px; transform: translateX(0); /* Adjust icon position */ }
-        .neurovision-testimonial-card.alt-offset { margin-top: 1rem; }
-        .mt-lg-n5 { margin-top: 1rem !important; }
+        .timeline-item:not(.alt) .timeline-icon, .timeline-item.alt .timeline-icon { left: 0px; transform: translateX(0); }
+        .section { --section-padding-y: 60px; }
+    }
+    @media (max-width: 576px) {
+        body.theme-glassy { padding-top: 65px; }
+        /* .neurovision-navbar-brand { font-size: 1.1rem; } */ /* Assuming a class for brand text if logo is separate */
+        .neurovision-glassy-card { padding: 1.2rem; }
+        .neurovision-cta-hero { padding: 0.7rem 1.2rem; font-size: 0.9rem; }
+        h1, .h1 { font-size: 2rem; } h2, .h2 { font-size: 1.75rem; } h3, .h3 { font-size: 1.5rem; }
     }
 </style>
 </head>
@@ -489,6 +507,16 @@ Authorization: Bearer YOUR_API_KEY
   "style_id": "impressionist_001",
   "aspect_ratio": "16:9"
 }</code></pre></div></section>
+
+<section id="social-share" class="section pt-0 text-center">
+    <div class="container" data-aos="fade-up">
+        <h4 class="mb-3">Share NeuroVision!</h4>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fexample.com%2Fneurovision&text=Check%20out%20NeuroVision%2C%20an%20AI%20Image%20Generator!" target="_blank" class="btn btn-outline-light m-1" aria-label="Share on Twitter"><i class="fab fa-twitter me-1"></i> Twitter</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fneurovision" target="_blank" class="btn btn-outline-light m-1" aria-label="Share on Facebook"><i class="fab fa-facebook-f me-1"></i> Facebook</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fexample.com%2Fneurovision&title=NeuroVision%20AI%20Image%20Generator&summary=Create%20stunning%20visuals%20with%20AI" target="_blank" class="btn btn-outline-light m-1" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in me-1"></i> LinkedIn</a>
+    </div>
+</section>
+
 <section id="parallax-cta" class="section neurovision-parallax-cta text-white text-center d-flex align-items-center">
     <div class="container position-relative" data-aos="fade-in" data-aos-duration="1000">
         <h2 class="display-4 mb-4">Start Your Visual Journey Today</h2>
@@ -519,6 +547,13 @@ Authorization: Bearer YOUR_API_KEY
     <!-- Footer: To be custom designed for each template -->
     <footer id="pageFooter" class="site-footer footer"> <!-- Using .footer for base styling from main.css -->
         <div class="container text-center">
+            <div class="neurovision-social-links mb-4">
+                <a href="#" aria-label="NeuroVision Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="NeuroVision Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="NeuroVision Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="NeuroVision LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p class="small text-muted">Follow us on social media for latest updates and community creations!</p>
             <p>&copy; <span id="currentYearPlaceholder">2024</span> <span id="productNameFooterPlaceholder">Product Name</span>. All rights reserved.</p>
             <!-- Add other footer content like links, social icons per template design -->
         </div>
