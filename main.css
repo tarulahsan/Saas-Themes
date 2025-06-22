@@ -227,6 +227,348 @@ img, svg {
     50% { transform: rotate(180deg) scale(1.1); }
 }
 
+/* ===== GLASSMORPHISM THEME COMPONENTS ===== */
+
+/* Glass Particles Background */
+.glass-particles-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.glass-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(0, 209, 255, 0.3);
+    border-radius: 50%;
+    animation: glassFloat 15s infinite linear;
+}
+
+@keyframes glassFloat {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+/* Glass Navigation */
+.glass-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.glass-nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.glass-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(0, 209, 255, 0.5));
+}
+
+.glass-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.glass-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.glass-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00d1ff, #ff77c6);
+    transition: width 0.3s ease;
+}
+
+.glass-link:hover {
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 209, 255, 0.5);
+}
+
+.glass-link:hover::after {
+    width: 100%;
+}
+
+.glass-btn-primary {
+    background: linear-gradient(135deg, rgba(0, 209, 255, 0.8), rgba(255, 119, 198, 0.8));
+    border: none;
+    border-radius: 25px;
+    padding: 10px 25px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.glass-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 209, 255, 0.4);
+}
+
+.glass-nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.glass-nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Glass Hero Section */
+.glass-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 20px 50px;
+}
+
+.glass-hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.glass-panel:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 209, 255, 0.2);
+}
+
+.glass-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0;
+}
+
+.title-line {
+    display: block;
+    background: linear-gradient(135deg, #00d1ff, #ff77c6, #00d1ff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.glass-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.glass-actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.glass-btn-hero {
+    background: linear-gradient(135deg, #00d1ff, #ff77c6);
+    border: none;
+    border-radius: 50px;
+    padding: 15px 35px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-btn-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.glass-btn-hero:hover::before {
+    left: 100%;
+}
+
+.glass-btn-hero:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 209, 255, 0.4);
+}
+
+.glass-btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    padding: 13px 33px;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.glass-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.glass-stats {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00d1ff;
+    text-shadow: 0 0 10px rgba(0, 209, 255, 0.5);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
+}
+
+/* Holographic Preview */
+.holographic-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.holo-frame {
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgba(0, 209, 255, 0.5);
+    border-radius: 20px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.holo-face {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: radial-gradient(circle, rgba(0, 209, 255, 0.1), transparent);
+}
+
+.face-dot {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(0, 209, 255, 0.6);
+    border-radius: 50%;
+    animation: facePulse 2s ease-in-out infinite;
+}
+
+@keyframes facePulse {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+
+.holo-scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 209, 255, 0.1) 2px,
+        rgba(0, 209, 255, 0.1) 4px
+    );
+    animation: scanMove 3s linear infinite;
+}
+
+@keyframes scanMove {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
 .theme-matte {
     --font-family-base: 'Inter', sans-serif;
     --font-family-headings: 'Lexend', sans-serif;
