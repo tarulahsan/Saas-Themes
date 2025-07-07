@@ -201,32 +201,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <h2>Who Can Benefit from AINarrate?</h2>
-                <p class="lead">From individuals to enterprises, AINarrate offers valuable solutions.</p>
+                <p class="lead">From content creators to enterprises, AINarrate transforms how you create audio content.</p>
             </div>
             <div class="row" data-aos="fade-up">
                 <div class="col-md-6 col-lg-4 mb-3">
-                    <h5><i class="fas fa-paint-brush me-2 text-primary"></i>Artists & Designers</h5>
-                    <p>Create unique art pieces, concept designs, and inspiration for projects.</p>
+                    <h5><i class="fas fa-podcast me-2 text-primary"></i>Podcasters</h5>
+                    <p>Convert written content into engaging podcast episodes with natural-sounding narration.</p>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-3">
-                    <h5><i class="fas fa-bullhorn me-2 text-primary"></i>Marketers & Advertisers</h5>
-                    <p>Generate custom visuals for campaigns, social media, and ad creatives.</p>
+                    <h5><i class="fas fa-bullhorn me-2 text-primary"></i>Content Marketers</h5>
+                    <p>Transform blog posts and articles into audio content for broader audience reach.</p>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-3">
-                    <h5><i class="fas fa-feather-alt me-2 text-primary"></i>Content Creators</h5>
-                    <p>Produce unique blog post headers, YouTube thumbnails, and presentation graphics.</p>
+                    <h5><i class="fas fa-graduation-cap me-2 text-primary"></i>Educators</h5>
+                    <p>Create audio lessons and educational content from written materials.</p>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-3">
-                    <h5><i class="fas fa-gamepad me-2 text-primary"></i>Game Developers</h5>
-                    <p>Quickly prototype game assets, character designs, and environment concepts.</p>
+                    <h5><i class="fas fa-book me-2 text-primary"></i>Authors & Publishers</h5>
+                    <p>Convert books and articles into audiobooks and spoken content.</p>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-3">
-                    <h5><i class="fas fa-lightbulb me-2 text-primary"></i>Startups & Innovators</h5>
-                    <p>Visualize product ideas and create compelling pitch deck visuals.</p>
+                    <h5><i class="fas fa-building me-2 text-primary"></i>Businesses</h5>
+                    <p>Create training materials, presentations, and internal communications in audio format.</p>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-3">
-                    <h5><i class="fas fa-camera-retro me-2 text-primary"></i>Photographers</h5>
-                    <p>Explore creative photo manipulations and artistic styles.</p>
+                    <h5><i class="fas fa-microphone me-2 text-primary"></i>Voice Artists</h5>
+                    <p>Prototype and test different narration styles before final recording.</p>
                 </div>
             </div>
         </div>
@@ -259,10 +259,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <div class="card-body">
                             <h5 class="card-title display-4">$0<small class="text-muted">/mo</small></h5>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li>10 Image Generations</li>
-                                <li>Basic Quality</li>
+                                <li>10 Audio Generations</li>
+                                <li>Basic Voice Quality</li>
                                 <li>Community Support</li>
-                                <li>Watermarked Images</li>
+                                <li>5 Minutes Max Length</li>
                             </ul>
                             <button type="button" class="btn btn-outline-primary">Start Free Trial</button>
                         </div>
@@ -274,11 +274,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <div class="card-body">
                             <h5 class="card-title display-4">$19<small class="text-muted">/mo</small></h5>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li>200 Image Generations</li>
-                                <li>High Quality</li>
+                                <li>500 Audio Generations</li>
+                                <li>Premium Voice Quality</li>
                                 <li>Priority Support</li>
-                                <li>No Watermarks</li>
-                                <li>Access to Advanced Models</li>
+                                <li>60 Minutes Max Length</li>
+                                <li>Multiple Voice Options</li>
                             </ul>
                             <button type="button" class="btn btn-primary">Get Started</button>
                         </div>
@@ -290,8 +290,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <div class="card-body">
                             <h5 class="card-title display-4">$49<small class="text-muted">/mo</small></h5>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li>1000 Image Generations</li>
-                                <li>Premium Quality & Styles</li>
+                                <li>Unlimited Audio Generations</li>
+                                <li>Studio Quality Voices</li>
                                 <li>Dedicated Support</li>
                                 <li>API Access</li>
                                 <li>Commercial Use License</li>
@@ -325,14 +325,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div class="tab-content" id="apiTabsContent" data-aos="fade-up" data-aos-delay="100">
                 <div class="tab-pane fade show active p-3" id="overview" role="tabpanel" aria-labelledby="overview-tab">
                     <h4>API Overview</h4>
-                    <p>Our REST API allows you to integrate AINarrate's image generation capabilities directly into your applications, websites, or workflows. Get programmatic access to generate images, manage your account, and more. All responses are in JSON format.</p>
+                    <p>Our REST API allows you to integrate AINarrate's text-to-speech capabilities directly into your applications, websites, or workflows. Get programmatic access to generate audio, manage your account, and more. All responses are in JSON format.</p>
                     <pre class="bg-light p-3 rounded"><code>// Example API Request (conceptual)
-POST /v1/generate
+POST /v1/narrate
 Authorization: Bearer YOUR_API_KEY
 {
-  "prompt": "A futuristic cityscape at sunset, cyberpunk style",
-  "style": "photorealistic",
-  "aspect_ratio": "16:9"
+  "text": "Welcome to our podcast. Today we'll discuss...",
+  "voice": "professional_female",
+  "speed": 1.0,
+  "format": "mp3"
 }</code></pre>
                 </div>
                 <div class="tab-pane fade p-3" id="authentication" role="tabpanel" aria-labelledby="authentication-tab">
@@ -343,8 +344,8 @@ Authorization: Bearer YOUR_API_KEY
                 <div class="tab-pane fade p-3" id="endpoints" role="tabpanel" aria-labelledby="endpoints-tab">
                     <h4>Key Endpoints</h4>
                     <ul>
-                        <li><strong>POST /v1/generate:</strong> Generate a new image based on a prompt and parameters.</li>
-                        <li><strong>GET /v1/images/{id}:</strong> Retrieve status or details of a generated image.</li>
+                        <li><strong>POST /v1/narrate:</strong> Generate audio narration from text with voice options.</li>
+                        <li><strong>GET /v1/audio/{id}:</strong> Retrieve status or download link for generated audio.</li>
                         <li><strong>GET /v1/account/usage:</strong> Check your current API usage and limits.</li>
                     </ul>
                     <p><em>Full API documentation will be available upon signing up for an API plan.</em></p>
@@ -365,15 +366,15 @@ Authorization: Bearer YOUR_API_KEY
                         <div class="testimonial-card text-center p-4">
                             <!-- Suggested Image: An AI-generated, diverse, and professional-looking avatar. Replace assets/ai-avatar-neutral.png -->
                             <img data-src="assets/ai-avatar-neutral.png" class="rounded-circle mb-3 lozad" alt="User Avatar 1" style="width: 80px; height: 80px; object-fit: cover;">
-                            <p class="lead">"AINarrate has revolutionized my workflow. I can now generate stunning visuals for my blog in minutes!"</p>
-                            <h5 class="mt-3">- Alex P., Content Creator</h5>
+                            <p class="lead">"AINarrate has revolutionized my podcast workflow. I can now turn my blog posts into engaging audio content in minutes!"</p>
+                            <h5 class="mt-3">- Alex P., Podcast Creator</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="testimonial-card text-center p-4">
                             <!-- Suggested Image: Another unique AI-generated avatar. Replace assets/ai-avatar-neutral.png -->
                             <img data-src="assets/ai-avatar-neutral.png" class="rounded-circle mb-3 lozad" alt="User Avatar 2" style="width: 80px; height: 80px; object-fit: cover;">
-                            <p class="lead">"The quality of images is outstanding. It's like having a professional artist on demand."</p>
+                            <p class="lead">"The voice quality is outstanding. It's like having a professional narrator on demand for all our content."</p>
                             <h5 class="mt-3">- Sarah K., Marketing Manager</h5>
                         </div>
                     </div>
@@ -413,7 +414,7 @@ Authorization: Bearer YOUR_API_KEY
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="contactModalLabel">Start Your AI Image Journey</h5>
+                    <h5 class="modal-title" id="contactModalLabel">Start Your AI Audio Journey</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -435,7 +436,7 @@ Authorization: Bearer YOUR_API_KEY
                             <input type="checkbox" class="form-check-input" id="contactConsent" name="consent" required data-parsley-required-message="You must agree to the terms.">
                             <label class="form-check-label" for="contactConsent">I agree to the <a href="#privacy" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a> and <a href="#terms" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#termsModal">Terms of Service</a>.</label>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Submit & Start Generating</button>
+                        <button type="submit" class="btn btn-primary w-100">Submit & Start Creating Audio</button>
                     </form>
                     <div id="form-submission-feedback" class="mt-3"></div>
                 </div>
@@ -485,7 +486,7 @@ Authorization: Bearer YOUR_API_KEY
                     <h5>AINarrate AI</h5>
                     <!-- Suggested Image: Same as header logo, possibly smaller or monochrome. Replace assets/ai-logo-generic.png -->
                     <img data-src="assets/ai-logo-generic.png" alt="AINarrate Footer Logo" style="height: 30px; filter: brightness(0) invert(1);" class="lozad mb-2">
-                    <p>Generating the future of visuals, one prompt at a time.</p>
+                    <p>Transforming text into engaging audio, one narration at a time.</p>
                 </div>
                 <div class="col-md-2 mb-3">
                     <h5>Quick Links</h5>
